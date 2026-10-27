@@ -1,0 +1,43 @@
+
+> midnight-invitation@1.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.12 /Users/marcoszamudio/Documents/Dev/invitación-luci
+
+ ✓ src/__tests__/logic.test.ts > real event data > resolves IANA civil time independent of machine timezone 3ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects nonexistent DST time 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects ambiguous DST time 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > counts remaining time and stops at zero 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > exports escaped CRLF UTC calendar 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > blocks incomplete calendar and invalid end 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > folds UTF8 calendar lines at 75 octets 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > builds encoded Google Maps links and rejects unsafe override 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > validates RSVP including max guests 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > encodes names, newlines and emoji for official WhatsApp 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > does not claim attendance on a decline 0ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > shows honest demo, missing data gates and no invented countdown 44ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > opens invitation by keyboard and focuses celebration 72ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > applies reduced motion preference 6ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > has no automated accessibility violations in demo markup (contrast excluded without layout) 64ms
+ ✓ src/__tests__/experience.test.tsx > gallery > renders decorative alternative when photos absent 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > opens, navigates arrows and closes with Escape, returning focus 18ms
+ ✓ src/__tests__/experience.test.tsx > gallery > handles photo errors without broken image glyphs 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > navigates on horizontal touch swipe 10ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > is absent without a file 0ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > plays only after click, supports pause and error retry 21ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > validates name and selection before opening WhatsApp 60ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > does not call a missing recipient a success 2ms
+ ✓ src/__tests__/experience.test.tsx > disabled animations and fallback handling > uses immediate navigation when event animations disabled 69ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > does not claim dress code is undefined when optional colors are absent 9ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > marks audio loading/errors as persistent mobile feedback 10ms
+
+ Test Files  2 passed (2)
+      Tests  30 passed (30)
+   Start at  21:36:00
+   Duration  849ms (transform 78ms, setup 145ms, import 169ms, tests 396ms, environment 363ms)
+

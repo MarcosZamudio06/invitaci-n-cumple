@@ -1,0 +1,79 @@
+{
+  "standard": "WCAG 2.2 AA normal text >= 4.5:1",
+  "results": [
+    {
+      "usage": "Focus outline / ivory",
+      "foreground": "#244D55",
+      "background": "#F8F6F0",
+      "ratio": 8.57,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Focus outline / white",
+      "foreground": "#244D55",
+      "background": "#FFFFFF",
+      "ratio": 9.26,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Inverse focus outline / teal",
+      "foreground": "#F8F6F0",
+      "background": "#244D55",
+      "ratio": 8.57,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Body / ivory",
+      "foreground": "#244D55",
+      "background": "#F8F6F0",
+      "ratio": 8.57,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Body / white",
+      "foreground": "#244D55",
+      "background": "#FFFFFF",
+      "ratio": 9.26,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Date / water",
+      "foreground": "#244D55",
+      "background": "#D6E9E7",
+      "ratio": 7.35,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Reminder / sage",
+      "foreground": "#244D55",
+      "background": "#A9C2B5",
+      "ratio": 4.88,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Artwork / champagne",
+      "foreground": "#244D55",
+      "background": "#D9C6A5",
+      "ratio": 5.54,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Button and countdown / teal",
+      "foreground": "#F8F6F0",
+      "background": "#244D55",
+      "ratio": 8.57,
+      "normalTextAA": true
+    },
+    {
+      "usage": "Countdown labels / teal",
+      "foreground": "#D9C6A5",
+      "background": "#244D55",
+      "ratio": 5.54,
+      "normalTextAA": true
+    }
+  ],
+  "notes": [
+    "Dusty coral is decorative only; deep teal on dusty coral is 3.38:1 and is not used for normal text.",
+    "This checks authored solid token pairs, not rendered opacity, overlays or device color reproduction."
+  ]
+}

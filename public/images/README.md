@@ -1,0 +1,1 @@
+Place authorized photographs of Luci here, then configure src/config/invitation.ts. Use images/filename.webp, meaningful alt text, dimensions and an optional caption. Prefer optimized 900–1600px files under 250KB. No personal photographs have been supplied; the current invitation uses original geometric pool artwork instead.

@@ -1,0 +1,427 @@
+
+ RUN  v4.1.12 /Users/marcoszamudio/Documents/Dev/invitación-luci
+
+ ✓ src/__tests__/experience.test.tsx > complete invitation > shows honest demo, missing data gates and no invented countdown 49ms
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports (/Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext (/Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/jsdom/lib/jsdom/living/nodes/HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext (/Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/jsdom/lib/jsdom/living/generated/HTMLCanvasElement.js:131:58)
+    at /Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/axe-core/axe.js:21249:49
+    at Object.get (/Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/axe-core/axe.js:15329:23)
+    at _isIconLigature (/Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/axe-core/axe.js:21248:41)
+    at /Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/axe-core/axe.js:21338:37
+    at Array.map (<anonymous>)
+    at visibleVirtual (/Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/axe-core/axe.js:21332:35)
+    at Object.labelContentNameMismatchEvaluate (/Users/marcoszamudio/Documents/Dev/invitación-luci/node_modules/axe-core/axe.js:30877:25) undefined
+ ✓ src/__tests__/experience.test.tsx > complete invitation > opens invitation by keyboard and focuses celebration 74ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > applies reduced motion preference 6ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > has no automated accessibility violations in demo markup (contrast excluded without layout) 67ms
+ ✓ src/__tests__/experience.test.tsx > gallery > renders decorative alternative when photos absent 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > opens, navigates arrows and closes with Escape, returning focus 19ms
+ ✓ src/__tests__/experience.test.tsx > gallery > handles photo errors without broken image glyphs 3ms
+ ✓ src/__tests__/experience.test.tsx > gallery > navigates on horizontal touch swipe 9ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > is absent without a file 0ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > plays only after click, supports pause and error retry 21ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > validates name and selection before opening WhatsApp 75ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > does not call a missing recipient a success 4ms
+ × src/__tests__/experience.test.tsx > disabled animations and fallback handling > uses immediate navigation when event animations disabled 1041ms
+   → expected "vi.fn()" to be called with arguments: [ { behavior: 'instant' } ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+    {
+-     "behavior": "instant",
++     "behavior": "smooth",
+    },
+  ]
+
+
+Number of calls: 1
+
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"invitation"[39m
+        [33mdata-motion[39m=[32m"reduced"[39m
+        [33mdata-particles[39m=[32m"false"[39m
+        [33mstyle[39m=[32m"--background: #0B0B0F; --champagne: #E8D9BD; --accent: #C6A76A; --foreground: #F7F3ED; --muted: #A6A3A0;"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"skip-link"[39m
+          [33mhref[39m=[32m"#details"[39m
+        [36m>[39m
+          [0mIr a los detalles[0m
+        [36m</a>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"site-header"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-label[39m=[32m"Midnight Celebration, inicio"[39m
+            [33mclass[39m=[32m"wordmark"[39m
+            [33mhref[39m=[32m"#top"[39m
+          [36m>[39m
+            [0mmidnight[0m
+            [36m<span>[39m
+              [0mCELEBRATION[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Navegación principal"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#details"[39m
+            [36m>[39m
+              [0mLa noche[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"nav-rsvp"[39m
+              [33mhref[39m=[32m"#rsvp"[39m
+            [36m>[39m
+              [0mConfirmar [0m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"14"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"14"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 7h10v10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 17 17 7"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</a>[39m
+          [36m</nav>[39m
+        [36m</header>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"demo-banner"[39m
+        [36m>[39m
+          [0mVISTA DE DEMOSTRACIÓN [0m
+          [36m<span>[39m
+            [0m· Los datos del evento están por personalizar.[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<main>[39m
+          [36m<section[39m
+            [33maria-label[39m=[32m"Abrir invitación"[39m
+            [33mclass[39m=[32m"intro intro-opened"[39m
+            [33mid[39m=[32m"top"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"intro-frame"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-tl"[39m
+              [36m/>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-tr"[39m
+              [36m/>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-bl"[39m
+              [36m/>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-br"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"celestial-art"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"orbit orbit-one"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"orbit orbit-two"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"orbit orbit-three"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"star star-one"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"star star-two"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"star star-three"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"art-horizon"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"intro-copy"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"invited"[39m
+                [36m>[39m
+                  [0mYou've Been Invited[0m
+                [36m</span>[39m
+                [36m<h1>[39m
+                  [0mAlgunas noches[0m
+                  [36m<br />[39m
+                  [0mson [0m
+                  [36m<em>[39m
+                    [0mpara siempre.[0m
+                  [36m</em>[39m
+                [36m</h1>[39m
+                [36m<p>[39m
+                  [0mUna celebración. Las personas favoritas.[0m
+                  [36m<br />[39m
+                  [0mUn nuevo recuerdo por escribir.[0m
+                [36m</p>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"button button-gold"[39m
+                [36m>[39m
+                  [0mAbrir invitación [0m
+                  [36m<svg[39m
+                    [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"17"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"17"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M7 7h10v10"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M7 17 17 7"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"skip-intro"[39m
+                [36m>[39m
+                  [0mOmitir introducción [0m
+                  [36m<svg[39m
+                    [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"13"[39m
+                    [33mstroke...
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/experience.test.tsx > disabled animations and fallback handling > uses immediate navigation when event animations disabled
+AssertionError: expected "vi.fn()" to be called with arguments: [ { behavior: 'instant' } ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+    {
+-     "behavior": "instant",
++     "behavior": "smooth",
+    },
+  ]
+
+
+Number of calls: 1
+
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"invitation"[39m
+        [33mdata-motion[39m=[32m"reduced"[39m
+        [33mdata-particles[39m=[32m"false"[39m
+        [33mstyle[39m=[32m"--background: #0B0B0F; --champagne: #E8D9BD; --accent: #C6A76A; --foreground: #F7F3ED; --muted: #A6A3A0;"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"skip-link"[39m
+          [33mhref[39m=[32m"#details"[39m
+        [36m>[39m
+          [0mIr a los detalles[0m
+        [36m</a>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"site-header"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-label[39m=[32m"Midnight Celebration, inicio"[39m
+            [33mclass[39m=[32m"wordmark"[39m
+            [33mhref[39m=[32m"#top"[39m
+          [36m>[39m
+            [0mmidnight[0m
+            [36m<span>[39m
+              [0mCELEBRATION[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Navegación principal"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#details"[39m
+            [36m>[39m
+              [0mLa noche[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"nav-rsvp"[39m
+              [33mhref[39m=[32m"#rsvp"[39m
+            [36m>[39m
+              [0mConfirmar [0m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"14"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"14"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 7h10v10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 17 17 7"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</a>[39m
+          [36m</nav>[39m
+        [36m</header>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"demo-banner"[39m
+        [36m>[39m
+          [0mVISTA DE DEMOSTRACIÓN [0m
+          [36m<span>[39m
+            [0m· Los datos del evento están por personalizar.[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<main>[39m
+          [36m<section[39m
+            [33maria-label[39m=[32m"Abrir invitación"[39m
+            [33mclass[39m=[32m"intro intro-opened"[39m
+            [33mid[39m=[32m"top"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"intro-frame"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-tl"[39m
+              [36m/>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-tr"[39m
+              [36m/>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-bl"[39m
+              [36m/>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"corner corner-br"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"celestial-art"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"orbit orbit-one"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"orbit orbit-two"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"orbit orbit-three"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"star star-one"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"star star-two"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"star star-three"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"art-horizon"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"intro-copy"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"invited"[39m
+                [36m>[39m
+                  [0mYou've Been Invited[0m
+                [36m</span>[39m
+                [36m<h1>[39m
+                  [0mAlgunas noches[0m
+                  [36m<br />[39m
+                  [0mson [0m
+                  [36m<em>[39m
+                    [0mpara siempre.[0m
+                  [36m</em>[39m
+                [36m</h1>[39m
+                [36m<p>[39m
+                  [0mUna celebración. Las personas favoritas.[0m
+                  [36m<br />[39m
+                  [0mUn nuevo recuerdo por escribir.[0m
+                [36m</p>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"button button-gold"[39m
+                [36m>[39m
+                  [0mAbrir invitación [0m
+                  [36m<svg[39m
+                    [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"17"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"17"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M7 7h10v10"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M7 17 17 7"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"skip-intro"[39m
+                [36m>[39m
+                  [0mOmitir introducción [0m
+                  [36m<svg[39m
+                    [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"13"[39m
+                    [33mstroke...
+ ❯ src/__tests__/experience.test.tsx:32:327
+
+ ❯ runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  21:31:11
+   Duration  1.83s (transform 60ms, setup 65ms, import 164ms, tests 1.37s, environment 161ms)
+

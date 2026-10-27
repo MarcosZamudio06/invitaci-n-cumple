@@ -1,0 +1,37 @@
+{
+  "base": "http://127.0.0.1:4173",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html"
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 332
+    },
+    {
+      "path": "/assets/index-DVgLZji-.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 534316
+    },
+    {
+      "path": "/assets/index-eFLt_se6.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 22938
+    },
+    {
+      "path": "/social.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 54805,
+      "pngSignature": "137,80,78,71,13,10,26,10"
+    }
+  ],
+  "rootTitle": "Cumpleaños de Luci | Pool Party",
+  "absoluteSocial": "unconfigured intentionally, noindex"
+}

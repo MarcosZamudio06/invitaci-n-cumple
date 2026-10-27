@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "name": "Riviera Pool Party \u2014 Coastal Chic",
+  "colors": {
+    "ivory": "#F8F6F0",
+    "background": "#F8F6F0",
+    "surface": "#FFFFFF",
+    "water": "#D6E9E7",
+    "sage": "#A9C2B5",
+    "deepTeal": "#244D55",
+    "text": "#244D55",
+    "champagne": "#D9C6A5",
+    "dustyCoral": "#C98E81",
+    "focusRing": "#244D55"
+  },
+  "fonts": {
+    "display": "Outfit ExtraBold",
+    "body": "DM Sans"
+  },
+  "motion": {
+    "library": "GSAP",
+    "heroSeconds": 2,
+    "numberChangeMs": 220,
+    "feedbackMs": 160
+  }
+}

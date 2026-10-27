@@ -1,0 +1,1 @@
+Place an owned or correctly licensed audio file here, preferably a compressed MP3. Set music: { src: 'music/your-track.mp3', loop: true } in src/config/invitation.ts. The player remains absent by default. Playback starts only when a guest explicitly activates its music button. No copyrighted music is supplied.

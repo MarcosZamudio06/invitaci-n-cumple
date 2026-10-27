@@ -1,0 +1,26 @@
+vite v6.4.5 building for production...
+
+(!) outDir /private/tmp/invitation-subpath-003 is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1595 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../../private/tmp/invitation-subpath-003/index.html                                                   1.64 kB │ gzip:   0.67 kB
+../../../../../private/tmp/invitation-subpath-003/assets/manrope-latin-500-normal-BYYD-dBL.woff2              14.04 kB
+../../../../../private/tmp/invitation-subpath-003/assets/manrope-latin-400-normal-PaqtzbVb.woff2              14.11 kB
+../../../../../private/tmp/invitation-subpath-003/assets/manrope-latin-600-normal-4f0koTD-.woff2              14.17 kB
+../../../../../private/tmp/invitation-subpath-003/assets/manrope-latin-500-normal-DMZssgOp.woff               18.24 kB
+../../../../../private/tmp/invitation-subpath-003/assets/manrope-latin-400-normal-8tf8FM3T.woff               18.29 kB
+../../../../../private/tmp/invitation-subpath-003/assets/manrope-latin-600-normal-BqgrALkZ.woff               18.38 kB
+../../../../../private/tmp/invitation-subpath-003/assets/cormorant-garamond-latin-400-normal-B-1hWBU7.woff2   22.88 kB
+../../../../../private/tmp/invitation-subpath-003/assets/cormorant-garamond-latin-500-normal-BsRWmXhO.woff2   23.31 kB
+../../../../../private/tmp/invitation-subpath-003/assets/cormorant-garamond-latin-400-italic-Dc_OZ8oc.woff2   23.66 kB
+../../../../../private/tmp/invitation-subpath-003/assets/cormorant-garamond-latin-400-normal-B7YtguxJ.woff    30.98 kB
+../../../../../private/tmp/invitation-subpath-003/assets/cormorant-garamond-latin-500-normal-zIXX3Q-H.woff    31.37 kB
+../../../../../private/tmp/invitation-subpath-003/assets/cormorant-garamond-latin-400-italic-BLh7T8o8.woff    32.89 kB
+../../../../../private/tmp/invitation-subpath-003/assets/index-CzBfCEZv.css                                   20.84 kB │ gzip:   5.34 kB
+../../../../../private/tmp/invitation-subpath-003/assets/index-DR1PeJlw.js                                   408.38 kB │ gzip: 124.45 kB
+✓ built in 901ms
+Static assets OK: 3 HTML references, 1 configured assets and favicon.svg
