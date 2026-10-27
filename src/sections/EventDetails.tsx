@@ -110,7 +110,7 @@ export function LocationSection({ config }: { config: InvitationConfig }) {
         <div>
           <p>
             {config.address ||
-              "La dirección exacta se compartirá próximamente."}
+              "Así es cómo llegarás"}
           </p>
           {config.directions && <p>{config.directions}</p>}
         </div>
