@@ -11,7 +11,9 @@
     "text": "#244D55",
     "champagne": "#D9C6A5",
     "dustyCoral": "#C98E81",
-    "focusRing": "#244D55"
+    "focusRing": "#244D55",
+    "textPrimary": "#244D55",
+    "backgroundPrimary": "#F8F6F0"
   },
   "fonts": {
     "display": "Outfit ExtraBold",
@@ -19,8 +21,15 @@
   },
   "motion": {
     "library": "GSAP",
-    "heroSeconds": 2,
+    "heroSeconds": 2.1,
     "numberChangeMs": 220,
-    "feedbackMs": 160
+    "feedbackMs": 160,
+    "pauseWhenHidden": true
+  },
+  "rsvp": {
+    "background": "ivory",
+    "inputSurface": "white",
+    "selectedState": "sage",
+    "capacity": "optional-not-assumed"
   }
 }

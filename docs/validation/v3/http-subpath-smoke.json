@@ -1,0 +1,27 @@
+{
+  "basePath": "/luci/",
+  "publicUrlFixture": "https://example.org/luci/",
+  "absoluteOGImage": true,
+  "checks": [
+    {
+      "path": "/luci/favicon.svg",
+      "status": 200,
+      "type": "image/svg+xml"
+    },
+    {
+      "path": "/luci/assets/index-OVgpIRtW.js",
+      "status": 200,
+      "type": "text/javascript"
+    },
+    {
+      "path": "/luci/assets/index-BaGiu7za.css",
+      "status": 200,
+      "type": "text/css"
+    },
+    {
+      "path": "/luci/social.png",
+      "status": 200,
+      "type": "image/png"
+    }
+  ]
+}

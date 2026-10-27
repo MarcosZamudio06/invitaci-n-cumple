@@ -26,8 +26,8 @@ it("replaces the whole invitation with confirmed coastal birthday content", () =
     }),
   ).toBeVisible();
   expect(
-    screen.getByRole("button", { name: "CONFIRMAR ASISTENCIA" }),
-  ).toBeDisabled();
+    screen.getByRole("button", { name: "CONFIRMAR POR WHATSAPP" }),
+  ).toBeEnabled();
   expect(screen.getByRole("button", { name: "CÓMO LLEGAR" })).toBeDisabled();
   expect(
     screen.queryByText(/demostración|Midnight|para siempre/i),

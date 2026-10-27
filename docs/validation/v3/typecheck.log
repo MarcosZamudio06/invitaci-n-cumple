@@ -1,0 +1,4 @@
+
+> luci-riviera-pool-party@2.0.0 typecheck
+> tsc -b --pretty false
+

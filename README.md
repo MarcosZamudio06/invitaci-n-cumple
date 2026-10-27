@@ -1,6 +1,6 @@
 # Luci · Riviera Pool Party
 
-Invitación de cumpleaños React + TypeScript, estática y mobile-first. **Viernes 13 de noviembre de 2026, 5:00 PM, Jardín D-GALICIA**, zona `America/Mexico_City`. No está publicada. Dirección exacta, WhatsApp, fotos, edad, hora final y música no se han proporcionado y no se inventan.
+Invitación de cumpleaños React + TypeScript, estática y mobile-first. **Viernes 13 de noviembre de 2026, 5:00 PM, Jardín D-GALICIA**, zona `America/Mexico_City`. No está publicada. El RSVP por WhatsApp está configurado. Dirección exacta, fotos, edad, hora final y música no se han proporcionado y no se inventan.
 
 ## Ejecutar
 
@@ -28,11 +28,11 @@ En este sandbox macOS se necesita `OPENSSL_CONF=/dev/null` antes de los comandos
 
 Editar **`src/config/invitation.ts`**:
 
-- `name`, `eventType`, `welcome`, `message`, `age` opcional. La identidad actual es cumpleaños con alberca, sin edad asumida.
+- `name`, `eventType: birthday`, `eventTheme: riviera-pool-party`, `welcome`, `message`, `age` opcional. La identidad actual es cumpleaños con alberca, sin edad asumida.
 - `date: '2026-11-13'`, `startTime: '17:00'`, `timeZone: 'America/Mexico_City'`. El instante real es **2026-11-13T23:00:00Z**. El contador recomputa contra reloj real cada segundo y cuando cambia la visibilidad de la pestaña, sin valores negativos ni spam de lector de pantalla por segundo.
 - `endTime` es opcional y del mismo día; omitir si no se conoce o la fiesta cruza medianoche. No se inventa una duración para el ICS. Fechas inválidas, zonas inválidas y horas DST ambiguas/inexistentes se rechazan.
 - `venue`: nombre confirmado. `address`, `coordinates` o `mapsLink`: completar con datos exactos antes de habilitar “CÓMO LLEGAR”. No se busca una dirección a partir del nombre del jardín. Google sólo recibe conexiones después de abrir navegación o cargar el iframe bajo demanda.
-- `whatsapp`: dígitos con código de país, sin `+`, espacios ni guiones. Vacío deshabilita “CONFIRMAR ASISTENCIA” con explicación. `maxCompanions` son acompañantes ADICIONALES: cero no permite acompañantes. `confirmationMessage` cierra el mensaje.
+- `src/config/whatsapp.ts`: receptor internacional y `baseUrl` oficial centralizados. `invitation.whatsapp` reenvía el receptor sin repetirlo en componentes. Vacío mantiene una compuerta reutilizable con explicación. La CTA actual es “CONFIRMAR POR WHATSAPP”. `maxCompanions` es OPCIONAL: omitir/null significa que no se ha establecido un límite del evento. Cuando se configura, indica acompañantes ADICIONALES: cero permite una persona total. El campo numérico aparece sólo para “¡Claro que voy!”, empieza en 1 y valida enteros seguros; no existe el antiguo máximo interno de 100. `confirmationMessage` cierra la respuesta afirmativa.
 - `photos` y `heroImage`: imágenes locales `public/images/` con `src`, `alt`, `width`, `height`, `caption` opcional. Sin fotografías se muestra una ilustración geométrica original de alberca, nunca personas ficticias ni placeholders de demo. Lightbox nativo con teclado, Escape, swipe, carga/error y retorno al control inicial.
 - `music` opcional: `{ src: 'music/pista-propia.mp3', loop: true }`. Debe ser propia o licenciada. No suena al cargar: sólo al pulsar el reproductor. Sin archivo no se muestra el control. Error/carga/reintento permanecen visibles también en móvil.
 - `dressCode` opcional permite detalle adicional; no se ha asumido un código formal. El recordatorio de traje de baño sí es parte confirmada del evento.
@@ -57,7 +57,7 @@ Skills realmente aplicadas: **Emil Design Engineering**, **Animate** y recetas, 
 - `src/sections/EventDetails.tsx`: fecha, ICS y ubicación.
 - `src/sections/RSVPSection.tsx`: WhatsApp y validaciones.
 - `src/components/Gallery.tsx`, `AudioPlayer.tsx`, `PoolArt.tsx`: componentes y arte propio.
-- `src/utils/event.ts`: IANA/Temporal, calendario, Maps, WhatsApp.
+- `src/utils/event.ts`: IANA/Temporal, calendario, Maps y validación. `src/utils/whatsapp.ts`: mensajes positivos/negativos y URL codificada; sin almacenamiento.
 - `src/__tests__/`: regresiones funcionales, reloj, lifecycle y smoke real GSAP.
 - `public/social.png`: PNG real 1200×630, arte propio y Outfit vectorizado; sin fotografía personal.
 - `PRODUCT.md`, `DESIGN.md`: hechos y dirección vigente.
@@ -71,12 +71,20 @@ No se han creado cuentas ni desplegado. Cloudflare Pages o Netlify admiten un pr
 1. Subir el código a un repositorio propio. Build `npm run build`, salida `dist`, Node 22.18+ o 24. Alternativa: cargar la carpeta compilada mediante el flujo manual del proveedor.
 2. Al conocer la URL final HTTPS, configurar `PUBLIC_SITE_URL` con esa URL y reconstruir. Sin ella el HTML queda `noindex,nofollow` y no inventa URLs de imagen absoluta.
 3. Verificar que `TU-URL/social.png` responde PNG, `og:image`/`twitter:image` son públicos absolutos y la vista previa de WhatsApp muestra Luci/Pool Party.
-4. Completar WhatsApp y la ubicación real, probar en teléfono y volver a publicar. No hacen falta API keys, dominio comprado ni backend.
+4. Confirmar el receptor ya configurado y completar la ubicación real, probar en teléfono y volver a publicar. No hacen falta API keys, dominio comprado ni backend.
 
 GitHub Pages bajo `/nombre-repo/`: definir `PUBLIC_BASE_PATH=/nombre-repo/` y `PUBLIC_SITE_URL=https://TU-USUARIO.github.io/nombre-repo`; publicar `dist` con GitHub Pages/Actions. En dominio raíz conservar `/`.
 
 ## Validación honesta
 
-Ver **`docs/validation/v2/REPORT.md`** para ejecución actual y **`docs/validation/MANUAL.md`** para el checklist de 320, 375, 390, 430, 768, 1024 y 1440px y teléfonos reales. Los archivos anteriores de `docs/validation/` son evidencia histórica V1, no la identidad ni la aceptación actual.
+Ver **`docs/validation/v2/REPORT.md`** para evidencia histórica V2. La ejecución actual está en **`docs/validation/v3/REPORT.md`**; **`docs/validation/MANUAL.md`** contiene el checklist de 320, 375, 390, 430, 768, 1024 y 1440px y teléfonos reales. Los archivos anteriores de `docs/validation/` son evidencia histórica V1, no la identidad ni la aceptación actual.
 
 jsdom no prueba layout, safe areas, tacto, reproducción real ni entrega de WhatsApp. Importar ICS en clientes reales y revisar audio en iOS/Android sigue pendiente cuando existan archivos y datos. No se afirma conformidad WCAG completa sólo por axe o valores de contraste.
+
+## V3 — Refinamiento final
+
+La identidad Riviera se conserva. Ahora el formulario usa fondo marfil, controles blancos, estados seleccionados sage y una jerarquía más legible. El mensaje afirmativo incluye fecha, hora y jardín reales; la negativa es independiente y no incluye número de personas. Ambos omiten mensajes personales vacíos. Se abre WhatsApp síncronamente desde la acción del invitado; un guard de 700ms evita dobles activaciones accidentales y permite reintentar o editar. Si el navegador lanza una excepción se mantiene un enlace manual, sin bloqueo permanente.
+
+Aviso previo exacto: “Se abrirá WhatsApp con tu mensaje preparado. Solo falta presionar Enviar.” El sitio no afirma enviado/registrado, no usa backend, cookies, analytics, base de datos ni almacenamiento del navegador. Al abrir el enlace wa.me, el mensaje preparado se comparte con el servicio de WhatsApp; el invitado decide si lo envía al destinatario. Las pruebas simulan `window.open`: no se contactó al receptor real.
+
+Alias semánticos añadidos: `--text-primary`, `--background-primary`, `--surface`, conservando los tokens originales. El reloj se refresca con `focus` y `visibilitychange`; las animaciones propias se pausan al ocultarse la pestaña y se limpian al desmontar. No hay bucles ambientales infinitos.

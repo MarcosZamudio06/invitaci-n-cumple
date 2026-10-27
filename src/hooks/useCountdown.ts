@@ -26,9 +26,11 @@ export function useCountdown(targetDate: Date | string | null) {
     update();
     if (Date.now() < target) timer = setInterval(update, 1000);
     document.addEventListener("visibilitychange", update);
+    window.addEventListener("focus", update);
     return () => {
       if (timer !== undefined) clearInterval(timer);
       document.removeEventListener("visibilitychange", update);
+      window.removeEventListener("focus", update);
     };
   }, [target]);
 

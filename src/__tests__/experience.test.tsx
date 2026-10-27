@@ -21,8 +21,8 @@ describe("complete invitation", () => {
       screen.getByRole("button", { name: /AGREGAR A MI CALENDARIO/ }),
     ).toBeEnabled();
     expect(
-      screen.getByRole("button", { name: "CONFIRMAR ASISTENCIA" }),
-    ).toBeDisabled();
+      screen.getByRole("button", { name: "CONFIRMAR POR WHATSAPP" }),
+    ).toBeEnabled();
     expect(screen.getByRole("button", { name: "CÓMO LLEGAR" })).toBeDisabled();
     expect(screen.getByText("SEGUNDOS")).toBeVisible();
     expect(
@@ -151,18 +151,17 @@ describe("RSVP", () => {
       />,
     );
     await userEvent.click(
-      screen.getByRole("button", { name: "CONFIRMAR ASISTENCIA" }),
+      screen.getByRole("button", { name: "CONFIRMAR POR WHATSAPP" }),
     );
     expect(screen.getByRole("alert")).toHaveTextContent("Escribe tu nombre");
     expect(open).not.toHaveBeenCalled();
     await userEvent.type(screen.getByLabelText("Tu nombre"), "Ana & José");
-    await userEvent.click(screen.getByLabelText("Sí, estaré ahí"));
-    await userEvent.selectOptions(
-      screen.getByLabelText("Personas, incluyéndote"),
-      "2",
-    );
+    await userEvent.click(screen.getByLabelText("¡Claro que voy!"));
+    fireEvent.change(screen.getByLabelText("Personas, incluyéndote"), {
+      target: { value: "2" },
+    });
     await userEvent.click(
-      screen.getByRole("button", { name: "CONFIRMAR ASISTENCIA" }),
+      screen.getByRole("button", { name: "CONFIRMAR POR WHATSAPP" }),
     );
     expect(open).toHaveBeenCalledWith(
       expect.stringContaining("https://wa.me/5215512345678?text="),
@@ -173,7 +172,7 @@ describe("RSVP", () => {
     open.mockRestore();
   });
   it("does not call a missing recipient a success", () => {
-    render(<RSVPSection config={invitation} />);
+    render(<RSVPSection config={{ ...invitation, whatsapp: "" }} />);
     expect(
       screen.getByText(/falta configurar el número receptor/i),
     ).toBeVisible();

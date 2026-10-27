@@ -1,0 +1,135 @@
+
+> luci-riviera-pool-party@2.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.12 /Users/marcoszamudio/Documents/Dev/invitación-luci
+
+ ✓ src/__tests__/logic.test.ts > real event data > resolves IANA civil time independent of machine timezone 6ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects nonexistent DST time 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects ambiguous DST time 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > counts remaining time and stops at zero 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > exports escaped CRLF UTC calendar 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > blocks incomplete calendar and invalid end 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > folds UTF8 calendar lines at 75 octets 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > builds encoded Google Maps links and rejects unsafe override 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > validates RSVP including max guests 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > encodes names, newlines and emoji for official WhatsApp 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > does not claim attendance on a decline 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses one real centralized recipient and official endpoint 1ms
+ × src/__tests__/whatsapp.test.ts > personalized WhatsApp message > includes real civil date/time/venue and preserves personal unicode content 6ms
+   → expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain '📅 Viernes 13 de noviembre'
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > omits empty optional message sections 1ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > builds a warm decline without guest count or positive confirmation 0ms
+ × src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses configured names, date and venue rather than hardcoding event details 1ms
+   → expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain 'Sábado 20 de marzo'
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > does not keep the old hidden 100-person cap 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > enforces explicit optional caps and rejects unsafe/noninteger counts 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > rejects blanks, missing positive event data and invalid recipient/protocol 0ms
+ ✓ src/__tests__/countdown.test.tsx > Luci real event > uses the confirmed Friday at 5 PM in Mexico City 4ms
+ ✓ src/__tests__/countdown.test.tsx > Luci real event > exports a named venue without inventing an address or end time 1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > derives an accurate initial value, updates seconds and cleans timers 7ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > recomputes from actual time after tab returns 1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > stops at zero once reached 1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > never fabricates values for invalid target  0ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > never fabricates values for invalid target not-a-date 0ms
+ ✓ src/__tests__/countdown.test.tsx > refreshes on window focus without waiting for the next interval 1ms
+ ✓ src/__tests__/motion.test.tsx > GSAP ownership lifecycle > reverts matchMedia and split DOM on StrictMode replay and unmount 12ms
+ ✓ src/__tests__/motion.test.tsx > GSAP ownership lifecycle > does not split or create timelines when animations disabled 1ms
+ ✓ src/__tests__/motion.test.tsx > pauses owned timelines while hidden, resumes and removes visibility listener on cleanup 1ms
+ ✓ src/__tests__/gsap-smoke.test.ts > loads real GSAP plugins and restores a real SplitText DOM split 4ms
+ ✓ src/__tests__/gsap-smoke.test.ts > reverts a real scoped timeline to its original object state 1ms
+ ✓ src/__tests__/polish.test.tsx > exposes definitive semantic palette aliases while keeping existing theme tokens 27ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > enables real RSVP, shows the exact advance notice and reveals unrestricted count only for yes 68ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > opens synchronously from valid submit with no storage, blocks accidental double submit and allows retry 17ms
+ ✓ src/__tests__/riviera.test.tsx > replaces the whole invitation with confirmed coastal birthday content 78ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > validates configured companion limit, missing phone, blanks and decline 72ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > retains honest disabled state for reusable missing phone config 4ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > shows confirmed data while gating missing contact and map 63ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > keeps the details link keyboard reachable without an intro gate 26ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > applies reduced motion preference 10ms
+ ✓ src/__tests__/metadata.test.ts > applies central metadata to multiline tags and escapes customized copy 1ms
+ ✓ src/__tests__/metadata.test.ts > uses a contrast-safe focus-ring token outside dark sections 0ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > has no automated accessibility violations in demo markup (contrast excluded without layout) 84ms
+ ✓ src/__tests__/experience.test.tsx > gallery > renders decorative alternative when photos absent 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > opens, navigates arrows and closes with Escape, returning focus 16ms
+ ✓ src/__tests__/experience.test.tsx > gallery > handles photo errors without broken image glyphs 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > navigates on horizontal touch swipe 10ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > is absent without a file 0ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > plays only after click, supports pause and error retry 22ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > validates name and selection before opening WhatsApp 56ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > does not call a missing recipient a success 2ms
+ ✓ src/__tests__/experience.test.tsx > disabled animations and fallback handling > keeps all content visible with animations disabled 7ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > does not claim dress code is undefined when optional colors are absent 7ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > marks audio loading/errors as persistent mobile feedback 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/whatsapp.test.ts > personalized WhatsApp message > includes real civil date/time/venue and preserves personal unicode content
+AssertionError: expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain '📅 Viernes 13 de noviembre'
+
+- Expected
++ Received
+
+- 📅 Viernes 13 de noviembre
++ ¡Hola! 🌊
++
++ Soy Ana & José y confirmo mi asistencia
++ al cumpleaños de Luci. 🎉
++
++ 📅 Viernes, 13 de noviembre
++ 🕔 5:00 PM
++ 📍 Jardín D-GALICIA
++
++ 👥 Asistiremos 3 personas.
++
++ 💌 Mensaje para Luci:
++ ¡Feliz cumple! 🥳
++ Nos vemos #1 + 2
++
++ ¡Nos vemos en la fiesta! 🏖️
+
+ ❯ src/__tests__/whatsapp.test.ts:9:300
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses configured names, date and venue rather than hardcoding event details
+AssertionError: expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain 'Sábado 20 de marzo'
+
+- Expected
++ Received
+
+- Sábado 20 de marzo
++ ¡Hola! 🌊
++
++ Soy Ana & José y confirmo mi asistencia
++ al cumpleaños de Luna. 🎉
++
++ 📅 Sábado, 20 de marzo
++ 🕔 8:00 PM
++ 📍 Otro jardín
++
++ 👥 Asistiremos 3 personas.
++
++ 💌 Mensaje para Luna:
++ ¡Feliz cumple! 🥳
++ Nos vemos #1 + 2
++
++ ¡Nos vemos en la fiesta! 🏖️
+
+ ❯ src/__tests__/whatsapp.test.ts:12:266
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 9 passed (10)
+      Tests  2 failed | 57 passed (59)
+   Start at  22:22:57
+   Duration  1.10s (transform 464ms, setup 1.09s, import 1.18s, tests 650ms, environment 3.07s)
+

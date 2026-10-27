@@ -1,3 +1,5 @@
+import { whatsappConfig } from "./whatsapp.ts";
+
 export interface Photo {
   src: string;
   alt: string;
@@ -8,7 +10,8 @@ export interface Photo {
 
 export interface InvitationConfig {
   name: string;
-  eventType: "birthday-pool-party" | "birthday";
+  eventType: "birthday";
+  eventTheme: "riviera-pool-party";
   age?: number;
   message: string;
   welcome: string;
@@ -37,8 +40,8 @@ export interface InvitationConfig {
   /** International number: country code + digits, without +, spaces or punctuation. */
   whatsapp: string;
   confirmationMessage: string;
-  /** Additional guests beyond the invitee. Zero means no companions. */
-  maxCompanions: number;
+  /** Optional additional-guest limit. Undefined/null means no event cap was supplied. */
+  maxCompanions?: number | null;
   theme: {
     background: string;
     surface: string;
@@ -57,7 +60,8 @@ export interface InvitationConfig {
 
 export const invitation: InvitationConfig = {
   name: "Luci",
-  eventType: "birthday-pool-party",
+  eventType: "birthday",
+  eventTheme: "riviera-pool-party",
   message:
     "Un cumpleaños, un chapuzón y todos mis favoritos en el mismo lugar.",
   welcome: "¡Ven a celebrar conmigo!",
@@ -66,10 +70,11 @@ export const invitation: InvitationConfig = {
   timeZone: "America/Mexico_City",
   venue: "Jardín D-GALICIA",
   address: "",
+  mapsLink: "https://maps.app.goo.gl/EFvPumJwwkyL1Sry6",
   photos: [],
-  whatsapp: "",
-  confirmationMessage: "¡Nos vemos en la pool party!",
-  maxCompanions: 0,
+  whatsapp: whatsappConfig.recipient,
+  confirmationMessage: "¡Nos vemos en la fiesta! 🏖️",
+
   theme: {
     background: "#F8F6F0",
     surface: "#FFFFFF",
@@ -86,7 +91,7 @@ export const invitation: InvitationConfig = {
   seo: {
     title: "Cumpleaños de Luci | Pool Party",
     description:
-      "¡Estás invitado al cumpleaños de Luci! Viernes 13 de noviembre, 5:00 PM, Jardín D-GALICIA. ¡No olvides tu traje de baño!",
+      "¡Estás invitado al cumpleaños de Luci! Viernes 13 de noviembre a las 5:00 PM en Jardín D-GALICIA. ¡No olvides tu traje de baño!",
     socialImage: "social.png",
   },
 };

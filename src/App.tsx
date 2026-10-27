@@ -37,12 +37,17 @@ export default function App({
         timeZone: config.timeZone,
       }).format(eventDate)
     : "";
-  const theme = Object.fromEntries(
+  const baseTheme = Object.fromEntries(
     Object.entries(config.theme).map(([key, value]) => [
       `--${key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`,
       value,
     ]),
   ) as CSSProperties;
+  const theme = {
+    ...baseTheme,
+    "--text-primary": config.theme.text,
+    "--background-primary": config.theme.background,
+  } as CSSProperties;
   return (
     <div
       ref={scope}

@@ -145,35 +145,28 @@ export interface RSVP {
   people: number;
   message: string;
 }
-export function validateRSVP(value: RSVP, maxPeople: number): string | null {
-  if (value.name.trim().length < 2 || value.name.length > 80)
+export function validateRSVP(
+  value: RSVP,
+  maxPeople?: number | null,
+): string | null {
+  if (value.name.trim().length < 2 || value.name.trim().length > 80)
     return "Escribe tu nombre (entre 2 y 80 caracteres).";
   if (value.attending !== "yes" && value.attending !== "no")
     return "Selecciona si podrás acompañarnos.";
-  if (
-    value.attending === "yes" &&
-    (!Number.isInteger(value.people) ||
-      value.people < 1 ||
-      value.people > maxPeople)
-  )
-    return `Selecciona entre 1 y ${maxPeople} personas.`;
+  if (maxPeople != null && (!Number.isSafeInteger(maxPeople) || maxPeople < 1))
+    return "La configuración del límite de asistentes no es válida.";
+  if (value.attending === "yes") {
+    if (!Number.isSafeInteger(value.people) || value.people < 1)
+      return "Indica un número entero de personas, mínimo 1.";
+    if (maxPeople != null && value.people > maxPeople)
+      return `Selecciona entre 1 y ${maxPeople} personas.`;
+  }
   if (value.message.length > 500)
     return "El mensaje debe tener como máximo 500 caracteres.";
   return null;
 }
 export function validPhone(phone: string) {
   return /^[1-9]\d{7,14}$/.test(phone);
-}
-export function whatsappUrl(
-  phone: string,
-  name: string,
-  value: RSVP,
-  closing = "",
-): string | null {
-  if (!validPhone(phone) || !name.trim() || validateRSVP(value, 100))
-    return null;
-  const message = `¡Hola! Soy ${value.name.trim()} y ${value.attending === "yes" ? `confirmo mi asistencia al cumpleaños de ${name}. Asistiremos ${value.people} ${value.people === 1 ? "persona" : "personas"}.` : `no podré asistir al cumpleaños de ${name}. Gracias por invitarme.`}${value.message.trim() ? `\n${value.message.trim()}` : ""}${closing ? `\n${closing}` : ""}`;
-  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 export function assetUrl(path: string) {
   return `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;

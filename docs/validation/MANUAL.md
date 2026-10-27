@@ -19,7 +19,7 @@ En DevTools de Chrome/Safari abrir el sitio en **320, 375, 390, 430, 768, 1024 y
 - iOS Safari y Android Chrome: barras de navegador, safe area, teclado abierto, inputs sin zoom, botones al menos 44px y texto legible.
 - Deslizar galería horizontalmente; permitir scroll vertical. Doble toque y zoom siguen disponibles.
 - Con música con licencia: nada suena al cargar ni al abrir invitación; pulsar activar, pausar, reintentar sin conexión. Probar volver desde otra aplicación y bucle.
-- WhatsApp configurado: aceptar y rechazar asistencia, nombre con acentos/emoji, acompañantes y mensaje. Revisar contenido antes de enviarlo. Comprobar recuperación si navegador bloquea la pestaña. El sitio nunca debe mostrar “enviado”.
+- WhatsApp configurado V3: aceptar “¡Claro que voy!” y rechazar asistencia, nombre con acentos/emoji, total de personas visible sólo en afirmativo (sin límite de evento si no se configuró), y mensaje opcional. Revisar contenido antes de enviarlo. Comprobar recuperación si navegador bloquea la pestaña. El sitio nunca debe afirmar que envió/registró una respuesta. Abrir el enlace ya comparte el mensaje preparado con WhatsApp; sólo Enviar lo dirige al destinatario. Probar doble toque accidental, reintento y retorno desde WhatsApp.
 - Mapa: no debe haber peticiones a Google antes de cargarlo; enlace sigue funcionando si el iframe falla.
 
 ## Fecha y publicación

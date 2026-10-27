@@ -1,0 +1,3219 @@
+
+> luci-riviera-pool-party@2.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.12 /Users/marcoszamudio/Documents/Dev/invitación-luci
+
+ ✓ src/__tests__/logic.test.ts > real event data > resolves IANA civil time independent of machine timezone 4ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects nonexistent DST time 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects ambiguous DST time 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > counts remaining time and stops at zero 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > exports escaped CRLF UTC calendar 2ms
+ ✓ src/__tests__/logic.test.ts > real event data > blocks incomplete calendar and invalid end 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > folds UTF8 calendar lines at 75 octets 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > builds encoded Google Maps links and rejects unsafe override 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > validates RSVP including max guests 0ms
+ × src/__tests__/logic.test.ts > real event data > encodes names, newlines and emoji for official WhatsApp 2ms
+   → whatsappUrl is not a function
+ × src/__tests__/logic.test.ts > real event data > does not claim attendance on a decline 0ms
+   → whatsappUrl is not a function
+ ✓ src/__tests__/metadata.test.ts > applies central metadata to multiline tags and escapes customized copy 1ms
+ ✓ src/__tests__/metadata.test.ts > uses a contrast-safe focus-ring token outside dark sections 1ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses one real centralized recipient and official endpoint 1ms
+ × src/__tests__/whatsapp.test.ts > personalized WhatsApp message > includes real civil date/time/venue and preserves personal unicode content 13ms
+   → expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain '📅 Viernes 13 de noviembre'
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > omits empty optional message sections 1ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > builds a warm decline without guest count or positive confirmation 0ms
+ × src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses configured names, date and venue rather than hardcoding event details 1ms
+   → expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain 'Sábado 20 de marzo'
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > does not keep the old hidden 100-person cap 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > enforces explicit optional caps and rejects unsafe/noninteger counts 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > rejects blanks, missing positive event data and invalid recipient/protocol 0ms
+ ✓ src/__tests__/countdown.test.tsx > Luci real event > uses the confirmed Friday at 5 PM in Mexico City 8ms
+ ✓ src/__tests__/countdown.test.tsx > Luci real event > exports a named venue without inventing an address or end time 1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > derives an accurate initial value, updates seconds and cleans timers 10ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > recomputes from actual time after tab returns 2ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > stops at zero once reached 2ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > never fabricates values for invalid target  1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > never fabricates values for invalid target not-a-date 0ms
+ × src/__tests__/countdown.test.tsx > refreshes on window focus without waiting for the next interval 5ms
+   → expected +0 to be 45 // Object.is equality
+ ✓ src/__tests__/motion.test.tsx > GSAP ownership lifecycle > reverts matchMedia and split DOM on StrictMode replay and unmount 18ms
+ ✓ src/__tests__/motion.test.tsx > GSAP ownership lifecycle > does not split or create timelines when animations disabled 1ms
+ ✓ src/__tests__/gsap-smoke.test.ts > loads real GSAP plugins and restores a real SplitText DOM split 4ms
+ ✓ src/__tests__/gsap-smoke.test.ts > reverts a real scoped timeline to its original object state 1ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > enables real RSVP, shows the exact advance notice and reveals unrestricted count only for yes 67ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > opens synchronously from valid submit with no storage, blocks accidental double submit and allows retry 19ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > validates configured companion limit, missing phone, blanks and decline 80ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > retains honest disabled state for reusable missing phone config 6ms
+ × src/__tests__/riviera.test.tsx > replaces the whole invitation with confirmed coastal birthday content 144ms
+   → Unable to find an accessible element with the role "button" and name "CONFIRMAR ASISTENCIA"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Ir a los detalles":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "Luci, inicio":
+  [36m<a[39m
+    [33maria-label[39m=[32m"Luci, inicio"[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  Name "EL PLAN":
+  [36m<a[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "¿VIENES?":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VER EL PLAN":
+  [36m<a[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR ASISTENCIA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VOLVER ARRIBA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"site-header"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Navegación principal":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Navegación principal"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Cumpleaños de Luci":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+    [33mclass[39m=[32m"hero"[39m
+    [33mid[39m=[32m"top"[39m
+  [36m/>[39m
+
+  Name "Cuenta regresiva para el cumpleaños":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cuenta regresiva para el cumpleaños"[39m
+    [33mclass[39m=[32m"countdown-section"[39m
+    [33mid[39m=[32m"countdown"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Omitir animación":
+  [36m<button[39m
+    [33mclass[39m=[32m"skip-intro"[39m
+  [36m/>[39m
+
+  Name "AGREGAR A MI CALENDARIO":
+  [36m<button[39m
+    [33mclass[39m=[32m"button button-outline calendar-button"[39m
+  [36m/>[39m
+
+  Name "CÓMO LLEGAR":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"map-pending"[39m
+    [33mclass[39m=[32m"button button-outline"[39m
+    [33mdisabled[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note"[39m
+    [33mid[39m=[32m"map-pending"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "LUCI":
+  [36m<h1[39m
+    [33mclass[39m=[32m"hero-name"[39m
+  [36m/>[39m
+
+  Name "¡YA CASI ES EL DÍA!":
+  [36m<h2 />[39m
+
+  Name "APARTA LA FECHA.":
+  [36m<h2 />[39m
+
+  Name "Jardín D-GALICIA":
+  [36m<h2 />[39m
+
+  Name "¡NO OLVIDES LLEVAR TU TRAJE DE BAÑO!":
+  [36m<h2 />[39m
+
+  Name "BUENA COMPAÑÍA. MEJORES RECUERDOS.":
+  [36m<h2 />[39m
+
+  Name "¿VIENES A CELEBRAR CON LUCI?":
+  [36m<h2 />[39m
+
+  Name "¡NOS VEMOS EN LA FIESTA!":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong[39m
+    [33mclass[39m=[32m"date-month"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Ilustración original de una alberca con un flotador y ondas de agua":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Ilustración original de una alberca con un flotador y ondas de agua"[39m
+    [33mclass[39m=[32m"pool-graphic"[39m
+    [33mrole[39m=[32m"img"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Mensaje para Luci (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"closing"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"invitation"[39m
+      [33mdata-motion[39m=[32m"reduced"[39m
+      [33mdata-particles[39m=[32m"false"[39m
+      [33mstyle[39m=[32m"--background: #F8F6F0; --surface: #FFFFFF; --text: #244D55; --ivory: #F8F6F0; --water: #D6E9E7; --sage: #A9C2B5; --deep-teal: #244D55; --champagne: #D9C6A5; --dusty-coral: #C98E81; --focus-ring: #244D55;"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#details"[39m
+      [36m>[39m
+        [0mIr a los detalles[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"site-header"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-label[39m=[32m"Luci, inicio"[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mhref[39m=[32m"#top"[39m
+        [36m>[39m
+          [0mLUCI[0m
+          [36m<span>[39m
+            [0mPOOL PARTY[0m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Navegación principal"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#details"[39m
+          [36m>[39m
+            [0mEL PLAN[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#rsvp"[39m
+          [36m>[39m
+            [0m¿VIENES?[0m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"15"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"15"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 7h10v10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 17 17 7"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</a>[39m
+        [36m</nav>[39m
+      [36m</header>[39m
+      [36m<main>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+          [33mclass[39m=[32m"hero"[39m
+          [33mid[39m=[32m"top"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"hero-water"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 1200 650"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 0C960 70 1180 340 820 320S400 500 580 650h620Z"[39m
+                [33mfill[39m=[32m"var(--water)"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 180C1060 130 1110 460 880 450S710 600 760 650h440Z"[39m
+                [33mfill[39m=[32m"var(--sage)"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m""[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 800 400"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-topline"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0mES MI CUMPLEAÑOS[0m
+            [36m</span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"skip-intro"[39m
+            [36m>[39m
+              [0mOmitir animación[0m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"13"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"13"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 5v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m19 12-7 7-7-7"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-invite"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0m¡Ven a celebrar conmigo![0m
+            [36m</p>[39m
+            [36m<span>[39m
+              [0mNos espera una tarde muy especial.[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-title"[39m
+          [36m>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"hero-name"[39m
+            [36m>[39m
+              [0mLUCI[0m
+            [36m</h1>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"party-stamp"[39m
+            [36m>[39m
+              [0mPOOL[0m
+              [36m<br />[39...
+ × src/__tests__/experience.test.tsx > complete invitation > shows confirmed data while gating missing contact and map 136ms
+   → Unable to find an accessible element with the role "button" and name "CONFIRMAR ASISTENCIA"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Ir a los detalles":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "Luci, inicio":
+  [36m<a[39m
+    [33maria-label[39m=[32m"Luci, inicio"[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  Name "EL PLAN":
+  [36m<a[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "¿VIENES?":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VER EL PLAN":
+  [36m<a[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR ASISTENCIA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VOLVER ARRIBA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"site-header"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Navegación principal":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Navegación principal"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Cumpleaños de Luci":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+    [33mclass[39m=[32m"hero"[39m
+    [33mid[39m=[32m"top"[39m
+  [36m/>[39m
+
+  Name "Cuenta regresiva para el cumpleaños":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cuenta regresiva para el cumpleaños"[39m
+    [33mclass[39m=[32m"countdown-section"[39m
+    [33mid[39m=[32m"countdown"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Omitir animación":
+  [36m<button[39m
+    [33mclass[39m=[32m"skip-intro"[39m
+  [36m/>[39m
+
+  Name "AGREGAR A MI CALENDARIO":
+  [36m<button[39m
+    [33mclass[39m=[32m"button button-outline calendar-button"[39m
+  [36m/>[39m
+
+  Name "CÓMO LLEGAR":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"map-pending"[39m
+    [33mclass[39m=[32m"button button-outline"[39m
+    [33mdisabled[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note"[39m
+    [33mid[39m=[32m"map-pending"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "LUCI":
+  [36m<h1[39m
+    [33mclass[39m=[32m"hero-name"[39m
+  [36m/>[39m
+
+  Name "¡YA CASI ES EL DÍA!":
+  [36m<h2 />[39m
+
+  Name "APARTA LA FECHA.":
+  [36m<h2 />[39m
+
+  Name "Jardín D-GALICIA":
+  [36m<h2 />[39m
+
+  Name "¡NO OLVIDES LLEVAR TU TRAJE DE BAÑO!":
+  [36m<h2 />[39m
+
+  Name "BUENA COMPAÑÍA. MEJORES RECUERDOS.":
+  [36m<h2 />[39m
+
+  Name "¿VIENES A CELEBRAR CON LUCI?":
+  [36m<h2 />[39m
+
+  Name "¡NOS VEMOS EN LA FIESTA!":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong[39m
+    [33mclass[39m=[32m"date-month"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Ilustración original de una alberca con un flotador y ondas de agua":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Ilustración original de una alberca con un flotador y ondas de agua"[39m
+    [33mclass[39m=[32m"pool-graphic"[39m
+    [33mrole[39m=[32m"img"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Mensaje para Luci (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"closing"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"invitation"[39m
+      [33mdata-motion[39m=[32m"full"[39m
+      [33mdata-particles[39m=[32m"true"[39m
+      [33mstyle[39m=[32m"--background: #F8F6F0; --surface: #FFFFFF; --text: #244D55; --ivory: #F8F6F0; --water: #D6E9E7; --sage: #A9C2B5; --deep-teal: #244D55; --champagne: #D9C6A5; --dusty-coral: #C98E81; --focus-ring: #244D55;"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#details"[39m
+      [36m>[39m
+        [0mIr a los detalles[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"site-header"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-label[39m=[32m"Luci, inicio"[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mhref[39m=[32m"#top"[39m
+        [36m>[39m
+          [0mLUCI[0m
+          [36m<span>[39m
+            [0mPOOL PARTY[0m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Navegación principal"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#details"[39m
+          [36m>[39m
+            [0mEL PLAN[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#rsvp"[39m
+          [36m>[39m
+            [0m¿VIENES?[0m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"15"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"15"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 7h10v10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 17 17 7"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</a>[39m
+        [36m</nav>[39m
+      [36m</header>[39m
+      [36m<main>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+          [33mclass[39m=[32m"hero"[39m
+          [33mid[39m=[32m"top"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"hero-water"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 1200 650"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 0C960 70 1180 340 820 320S400 500 580 650h620Z"[39m
+                [33mfill[39m=[32m"var(--water)"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 180C1060 130 1110 460 880 450S710 600 760 650h440Z"[39m
+                [33mfill[39m=[32m"var(--sage)"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m""[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 800 400"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-topline"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0mES MI CUMPLEAÑOS[0m
+            [36m</span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"skip-intro"[39m
+            [36m>[39m
+              [0mOmitir animación[0m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"13"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"13"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 5v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m19 12-7 7-7-7"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-invite"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0m¡Ven a celebrar conmigo![0m
+            [36m</p>[39m
+            [36m<span>[39m
+              [0mNos espera una tarde muy especial.[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-title"[39m
+          [36m>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"hero-name"[39m
+            [36m>[39m
+              [0mLUCI[0m
+            [36m</h1>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"party-stamp"[39m
+            [36m>[39m
+              [0mPOOL[0m
+              [36m<br />[39m
+  ...
+ ✓ src/__tests__/experience.test.tsx > complete invitation > keeps the details link keyboard reachable without an intro gate 26ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > applies reduced motion preference 10ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > has no automated accessibility violations in demo markup (contrast excluded without layout) 80ms
+ ✓ src/__tests__/experience.test.tsx > gallery > renders decorative alternative when photos absent 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > opens, navigates arrows and closes with Escape, returning focus 15ms
+ ✓ src/__tests__/experience.test.tsx > gallery > handles photo errors without broken image glyphs 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > navigates on horizontal touch swipe 10ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > is absent without a file 0ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > plays only after click, supports pause and error retry 22ms
+ × src/__tests__/experience.test.tsx > RSVP > validates name and selection before opening WhatsApp 11ms
+   → Unable to find an accessible element with the role "button" and name "CONFIRMAR ASISTENCIA"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "¿VIENES A CELEBRAR CON MARÍA?":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Mensaje para María (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a María..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"section-shell rsvp-section"[39m
+      [33mid[39m=[32m"rsvp"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rsvp-heading"[39m
+      [36m>[39m
+        [36m<h2>[39m
+          [0m¿VIENES A CELEBRAR CON [0m
+          [0mMARÍA[0m
+          [0m?[0m
+        [36m</h2>[39m
+        [36m<p>[39m
+          [0m¡Nos encantará verte en la fiesta![0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"rsvp-art"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 240 240"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"78"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"48"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M61 69l30 25M149 146l31 26M68 180l26-31M146 91l27-31"[39m
+              [33mstroke[39m=[32m"var(--ivory)"[39m
+              [33mstroke-width[39m=[32m"35"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"101"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"54"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mpreserveAspectRatio[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 800 400"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"rsvp-personal"[39m
+        [36m>[39m
+          [0mUn mensaje tuyo y[0m
+          [36m<br />[39m
+          [0mempezamos a contar los días.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"guest-name"[39m
+        [36m>[39m
+          [0mTu nombre[0m
+        [36m</label>[39m
+        [36m<input[39m
+          [33mautocomplete[39m=[32m"name"[39m
+          [33mid[39m=[32m"guest-name"[39m
+          [33mmaxlength[39m=[32m"80"[39m
+          [33mminlength[39m=[32m"2"[39m
+          [33mname[39m=[32m"name"[39m
+          [33mplaceholder[39m=[32m"Tu nombre"[39m
+          [33mrequired[39m=[32m""[39m
+          [33mvalue[39m=[32m""[39m
+        [36m/>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0m¿Nos acompañas?[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"yes"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m¡Claro que voy![0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"no"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-minus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mEsta vez no podré[0m
+          [36m</label>[39m
+        [36m</fieldset>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"message"[39m
+        [36m>[39m
+          [0mMensaje para [0m
+          [0mMaría[0m
+          [0m [0m
+          [36m<span>[39m
+            [0m(opcional)[0m
+          [36m</span>[39m
+        [36m</label>[39m
+        [36m<textarea[39m
+          [33mid[39m=[32m"message"[39m
+          [33mmaxlength[39m=[32m"500"[39m
+          [33mname[39m=[32m"message"[39m
+          [33mplaceholder[39m=[32m"Déjale un mensaje a María..."[39m
+          [33mrows[39m=[32m"3"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"whatsapp-notice"[39m
+          [33mid[39m=[32m"whatsapp-notice"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-message-circle"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mSe abrirá WhatsApp con tu mensaje preparado. Solo falta presionar Enviar.[0m
+          [36m</span>[39m
+        [36m</p>[39m
+        [36m<button[39m
+          [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+          [33mclass[39m=[32m"button button-teal"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mCONFIRMAR POR WHATSAPP[0m
+          [36m<svg[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 7h10v10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 17 17 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"fine-note privacy-note"[39m
+        [36m>[39m
+          [0mNo guardamos tus datos. Se compartirán por WhatsApp cuando decidas enviar el mensaje.[0m
+        [36m</p>[39m
+      [36m</form>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ × src/__tests__/experience.test.tsx > RSVP > does not call a missing recipient a success 2ms
+   → Unable to find an element with the text: /falta configurar el número receptor/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"section-shell rsvp-section"[39m
+      [33mid[39m=[32m"rsvp"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rsvp-heading"[39m
+      [36m>[39m
+        [36m<h2>[39m
+          [0m¿VIENES A CELEBRAR CON [0m
+          [0mLUCI[0m
+          [0m?[0m
+        [36m</h2>[39m
+        [36m<p>[39m
+          [0m¡Nos encantará verte en la fiesta![0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"rsvp-art"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 240 240"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"78"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"48"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M61 69l30 25M149 146l31 26M68 180l26-31M146 91l27-31"[39m
+              [33mstroke[39m=[32m"var(--ivory)"[39m
+              [33mstroke-width[39m=[32m"35"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"101"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"54"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mpreserveAspectRatio[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 800 400"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"rsvp-personal"[39m
+        [36m>[39m
+          [0mUn mensaje tuyo y[0m
+          [36m<br />[39m
+          [0mempezamos a contar los días.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"guest-name"[39m
+        [36m>[39m
+          [0mTu nombre[0m
+        [36m</label>[39m
+        [36m<input[39m
+          [33mautocomplete[39m=[32m"name"[39m
+          [33mid[39m=[32m"guest-name"[39m
+          [33mmaxlength[39m=[32m"80"[39m
+          [33mminlength[39m=[32m"2"[39m
+          [33mname[39m=[32m"name"[39m
+          [33mplaceholder[39m=[32m"Tu nombre"[39m
+          [33mrequired[39m=[32m""[39m
+          [33mvalue[39m=[32m""[39m
+        [36m/>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0m¿Nos acompañas?[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"yes"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m¡Claro que voy![0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"no"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-minus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mEsta vez no podré[0m
+          [36m</label>[39m
+        [36m</fieldset>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"message"[39m
+        [36m>[39m
+          [0mMensaje para [0m
+          [0mLuci[0m
+          [0m [0m
+          [36m<span>[39m
+            [0m(opcional)[0m
+          [36m</span>[39m
+        [36m</label>[39m
+        [36m<textarea[39m
+          [33mid[39m=[32m"message"[39m
+          [33mmaxlength[39m=[32m"500"[39m
+          [33mname[39m=[32m"message"[39m
+          [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+          [33mrows[39m=[32m"3"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"whatsapp-notice"[39m
+          [33mid[39m=[32m"whatsapp-notice"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-message-circle"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mSe abrirá WhatsApp con tu mensaje preparado. Solo falta presionar Enviar.[0m
+          [36m</span>[39m
+        [36m</p>[39m
+        [36m<button[39m
+          [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+          [33mclass[39m=[32m"button button-teal"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mCONFIRMAR POR WHATSAPP[0m
+          [36m<svg[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 7h10v10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 17 17 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"fine-note privacy-note"[39m
+        [36m>[39m
+          [0mNo guardamos tus datos. Se compartirán por WhatsApp cuando decidas enviar el mensaje.[0m
+        [36m</p>[39m
+      [36m</form>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ✓ src/__tests__/experience.test.tsx > disabled animations and fallback handling > keeps all content visible with animations disabled 8ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > does not claim dress code is undefined when optional colors are absent 8ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > marks audio loading/errors as persistent mobile feedback 9ms
+ × src/__tests__/polish.test.tsx > exposes definitive semantic palette aliases while keeping existing theme tokens 26ms
+   → expected '' to be '#244D55' // Object.is equality
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/countdown.test.tsx > refreshes on window focus without waiting for the next interval
+AssertionError: expected +0 to be 45 // Object.is equality
+
+- Expected
++ Received
+
+- 45
++ 0
+
+ ❯ src/__tests__/countdown.test.tsx:79:354
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  src/__tests__/experience.test.tsx > complete invitation > shows confirmed data while gating missing contact and map
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "CONFIRMAR ASISTENCIA"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Ir a los detalles":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "Luci, inicio":
+  [36m<a[39m
+    [33maria-label[39m=[32m"Luci, inicio"[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  Name "EL PLAN":
+  [36m<a[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "¿VIENES?":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VER EL PLAN":
+  [36m<a[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR ASISTENCIA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VOLVER ARRIBA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"site-header"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Navegación principal":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Navegación principal"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Cumpleaños de Luci":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+    [33mclass[39m=[32m"hero"[39m
+    [33mid[39m=[32m"top"[39m
+  [36m/>[39m
+
+  Name "Cuenta regresiva para el cumpleaños":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cuenta regresiva para el cumpleaños"[39m
+    [33mclass[39m=[32m"countdown-section"[39m
+    [33mid[39m=[32m"countdown"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Omitir animación":
+  [36m<button[39m
+    [33mclass[39m=[32m"skip-intro"[39m
+  [36m/>[39m
+
+  Name "AGREGAR A MI CALENDARIO":
+  [36m<button[39m
+    [33mclass[39m=[32m"button button-outline calendar-button"[39m
+  [36m/>[39m
+
+  Name "CÓMO LLEGAR":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"map-pending"[39m
+    [33mclass[39m=[32m"button button-outline"[39m
+    [33mdisabled[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note"[39m
+    [33mid[39m=[32m"map-pending"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "LUCI":
+  [36m<h1[39m
+    [33mclass[39m=[32m"hero-name"[39m
+  [36m/>[39m
+
+  Name "¡YA CASI ES EL DÍA!":
+  [36m<h2 />[39m
+
+  Name "APARTA LA FECHA.":
+  [36m<h2 />[39m
+
+  Name "Jardín D-GALICIA":
+  [36m<h2 />[39m
+
+  Name "¡NO OLVIDES LLEVAR TU TRAJE DE BAÑO!":
+  [36m<h2 />[39m
+
+  Name "BUENA COMPAÑÍA. MEJORES RECUERDOS.":
+  [36m<h2 />[39m
+
+  Name "¿VIENES A CELEBRAR CON LUCI?":
+  [36m<h2 />[39m
+
+  Name "¡NOS VEMOS EN LA FIESTA!":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong[39m
+    [33mclass[39m=[32m"date-month"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Ilustración original de una alberca con un flotador y ondas de agua":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Ilustración original de una alberca con un flotador y ondas de agua"[39m
+    [33mclass[39m=[32m"pool-graphic"[39m
+    [33mrole[39m=[32m"img"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Mensaje para Luci (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"closing"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"invitation"[39m
+      [33mdata-motion[39m=[32m"full"[39m
+      [33mdata-particles[39m=[32m"true"[39m
+      [33mstyle[39m=[32m"--background: #F8F6F0; --surface: #FFFFFF; --text: #244D55; --ivory: #F8F6F0; --water: #D6E9E7; --sage: #A9C2B5; --deep-teal: #244D55; --champagne: #D9C6A5; --dusty-coral: #C98E81; --focus-ring: #244D55;"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#details"[39m
+      [36m>[39m
+        [0mIr a los detalles[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"site-header"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-label[39m=[32m"Luci, inicio"[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mhref[39m=[32m"#top"[39m
+        [36m>[39m
+          [0mLUCI[0m
+          [36m<span>[39m
+            [0mPOOL PARTY[0m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Navegación principal"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#details"[39m
+          [36m>[39m
+            [0mEL PLAN[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#rsvp"[39m
+          [36m>[39m
+            [0m¿VIENES?[0m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"15"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"15"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 7h10v10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 17 17 7"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</a>[39m
+        [36m</nav>[39m
+      [36m</header>[39m
+      [36m<main>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+          [33mclass[39m=[32m"hero"[39m
+          [33mid[39m=[32m"top"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"hero-water"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 1200 650"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 0C960 70 1180 340 820 320S400 500 580 650h620Z"[39m
+                [33mfill[39m=[32m"var(--water)"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 180C1060 130 1110 460 880 450S710 600 760 650h440Z"[39m
+                [33mfill[39m=[32m"var(--sage)"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m""[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 800 400"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-topline"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0mES MI CUMPLEAÑOS[0m
+            [36m</span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"skip-intro"[39m
+            [36m>[39m
+              [0mOmitir animación[0m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"13"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"13"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 5v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m19 12-7 7-7-7"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-invite"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0m¡Ven a celebrar conmigo![0m
+            [36m</p>[39m
+            [36m<span>[39m
+              [0mNos espera una tarde muy especial.[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-title"[39m
+          [36m>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"hero-name"[39m
+            [36m>[39m
+              [0mLUCI[0m
+            [36m</h1>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"party-stamp"[39m
+            [36m>[39m
+              [0mPOOL[0m
+              [36m<br />[39m
+  ...
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/__tests__/experience.test.tsx:24:14
+     22|     ).toBeEnabled();
+     23|     expect(
+     24|       screen.getByRole("button", { name: "CONFIRMAR ASISTENCIA" }),
+       |              ^
+     25|     ).toBeDisabled();
+     26|     expect(screen.getByRole("button", { name: "CÓMO LLEGAR" })).toBeDi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  src/__tests__/experience.test.tsx > RSVP > validates name and selection before opening WhatsApp
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "CONFIRMAR ASISTENCIA"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "¿VIENES A CELEBRAR CON MARÍA?":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Mensaje para María (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a María..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"section-shell rsvp-section"[39m
+      [33mid[39m=[32m"rsvp"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rsvp-heading"[39m
+      [36m>[39m
+        [36m<h2>[39m
+          [0m¿VIENES A CELEBRAR CON [0m
+          [0mMARÍA[0m
+          [0m?[0m
+        [36m</h2>[39m
+        [36m<p>[39m
+          [0m¡Nos encantará verte en la fiesta![0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"rsvp-art"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 240 240"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"78"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"48"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M61 69l30 25M149 146l31 26M68 180l26-31M146 91l27-31"[39m
+              [33mstroke[39m=[32m"var(--ivory)"[39m
+              [33mstroke-width[39m=[32m"35"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"101"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"54"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mpreserveAspectRatio[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 800 400"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"rsvp-personal"[39m
+        [36m>[39m
+          [0mUn mensaje tuyo y[0m
+          [36m<br />[39m
+          [0mempezamos a contar los días.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"guest-name"[39m
+        [36m>[39m
+          [0mTu nombre[0m
+        [36m</label>[39m
+        [36m<input[39m
+          [33mautocomplete[39m=[32m"name"[39m
+          [33mid[39m=[32m"guest-name"[39m
+          [33mmaxlength[39m=[32m"80"[39m
+          [33mminlength[39m=[32m"2"[39m
+          [33mname[39m=[32m"name"[39m
+          [33mplaceholder[39m=[32m"Tu nombre"[39m
+          [33mrequired[39m=[32m""[39m
+          [33mvalue[39m=[32m""[39m
+        [36m/>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0m¿Nos acompañas?[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"yes"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m¡Claro que voy![0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"no"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-minus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mEsta vez no podré[0m
+          [36m</label>[39m
+        [36m</fieldset>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"message"[39m
+        [36m>[39m
+          [0mMensaje para [0m
+          [0mMaría[0m
+          [0m [0m
+          [36m<span>[39m
+            [0m(opcional)[0m
+          [36m</span>[39m
+        [36m</label>[39m
+        [36m<textarea[39m
+          [33mid[39m=[32m"message"[39m
+          [33mmaxlength[39m=[32m"500"[39m
+          [33mname[39m=[32m"message"[39m
+          [33mplaceholder[39m=[32m"Déjale un mensaje a María..."[39m
+          [33mrows[39m=[32m"3"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"whatsapp-notice"[39m
+          [33mid[39m=[32m"whatsapp-notice"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-message-circle"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mSe abrirá WhatsApp con tu mensaje preparado. Solo falta presionar Enviar.[0m
+          [36m</span>[39m
+        [36m</p>[39m
+        [36m<button[39m
+          [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+          [33mclass[39m=[32m"button button-teal"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mCONFIRMAR POR WHATSAPP[0m
+          [36m<svg[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 7h10v10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 17 17 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"fine-note privacy-note"[39m
+        [36m>[39m
+          [0mNo guardamos tus datos. Se compartirán por WhatsApp cuando decidas enviar el mensaje.[0m
+        [36m</p>[39m
+      [36m</form>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/__tests__/experience.test.tsx:154:14
+    152|     );
+    153|     await userEvent.click(
+    154|       screen.getByRole("button", { name: "CONFIRMAR ASISTENCIA" }),
+       |              ^
+    155|     );
+    156|     expect(screen.getByRole("alert")).toHaveTextContent("Escribe tu no…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  src/__tests__/experience.test.tsx > RSVP > does not call a missing recipient a success
+TestingLibraryElementError: Unable to find an element with the text: /falta configurar el número receptor/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"section-shell rsvp-section"[39m
+      [33mid[39m=[32m"rsvp"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rsvp-heading"[39m
+      [36m>[39m
+        [36m<h2>[39m
+          [0m¿VIENES A CELEBRAR CON [0m
+          [0mLUCI[0m
+          [0m?[0m
+        [36m</h2>[39m
+        [36m<p>[39m
+          [0m¡Nos encantará verte en la fiesta![0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"rsvp-art"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 240 240"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"78"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"48"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M61 69l30 25M149 146l31 26M68 180l26-31M146 91l27-31"[39m
+              [33mstroke[39m=[32m"var(--ivory)"[39m
+              [33mstroke-width[39m=[32m"35"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"101"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"54"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mpreserveAspectRatio[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 800 400"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"rsvp-personal"[39m
+        [36m>[39m
+          [0mUn mensaje tuyo y[0m
+          [36m<br />[39m
+          [0mempezamos a contar los días.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"guest-name"[39m
+        [36m>[39m
+          [0mTu nombre[0m
+        [36m</label>[39m
+        [36m<input[39m
+          [33mautocomplete[39m=[32m"name"[39m
+          [33mid[39m=[32m"guest-name"[39m
+          [33mmaxlength[39m=[32m"80"[39m
+          [33mminlength[39m=[32m"2"[39m
+          [33mname[39m=[32m"name"[39m
+          [33mplaceholder[39m=[32m"Tu nombre"[39m
+          [33mrequired[39m=[32m""[39m
+          [33mvalue[39m=[32m""[39m
+        [36m/>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0m¿Nos acompañas?[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"yes"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m¡Claro que voy![0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"no"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-minus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mEsta vez no podré[0m
+          [36m</label>[39m
+        [36m</fieldset>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"message"[39m
+        [36m>[39m
+          [0mMensaje para [0m
+          [0mLuci[0m
+          [0m [0m
+          [36m<span>[39m
+            [0m(opcional)[0m
+          [36m</span>[39m
+        [36m</label>[39m
+        [36m<textarea[39m
+          [33mid[39m=[32m"message"[39m
+          [33mmaxlength[39m=[32m"500"[39m
+          [33mname[39m=[32m"message"[39m
+          [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+          [33mrows[39m=[32m"3"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"whatsapp-notice"[39m
+          [33mid[39m=[32m"whatsapp-notice"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-message-circle"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mSe abrirá WhatsApp con tu mensaje preparado. Solo falta presionar Enviar.[0m
+          [36m</span>[39m
+        [36m</p>[39m
+        [36m<button[39m
+          [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+          [33mclass[39m=[32m"button button-teal"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mCONFIRMAR POR WHATSAPP[0m
+          [36m<svg[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 7h10v10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 17 17 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"fine-note privacy-note"[39m
+        [36m>[39m
+          [0mNo guardamos tus datos. Se compartirán por WhatsApp cuando decidas enviar el mensaje.[0m
+        [36m</p>[39m
+      [36m</form>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/__tests__/experience.test.tsx:178:14
+    176|     render(<RSVPSection config={invitation} />);
+    177|     expect(
+    178|       screen.getByText(/falta configurar el número receptor/i),
+       |              ^
+    179|     ).toBeVisible();
+    180|     expect(screen.queryByRole("status")).not.toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  src/__tests__/logic.test.ts > real event data > encodes names, newlines and emoji for official WhatsApp
+TypeError: whatsappUrl is not a function
+ ❯ src/__tests__/logic.test.ts:104:17
+    102|   });
+    103|   it("encodes names, newlines and emoji for official WhatsApp", () => {
+    104|     const url = whatsappUrl("5215512345678", "María", {
+       |                 ^
+    105|       name: "Ana & José",
+    106|       attending: "yes",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  src/__tests__/logic.test.ts > real event data > does not claim attendance on a decline
+TypeError: whatsappUrl is not a function
+ ❯ src/__tests__/logic.test.ts:125:9
+    123|     expect(
+    124|       decodeURIComponent(
+    125|         whatsappUrl("5215512345678", "María", {
+       |         ^
+    126|           name: "Ana",
+    127|           attending: "no",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  src/__tests__/polish.test.tsx > exposes definitive semantic palette aliases while keeping existing theme tokens
+AssertionError: expected '' to be '#244D55' // Object.is equality
+
+- Expected
++ Received
+
+- #244D55
+
+ ❯ src/__tests__/polish.test.tsx:5:310
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  src/__tests__/riviera.test.tsx > replaces the whole invitation with confirmed coastal birthday content
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "CONFIRMAR ASISTENCIA"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Ir a los detalles":
+  [36m<a[39m
+    [33mclass[39m=[32m"skip-link"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "Luci, inicio":
+  [36m<a[39m
+    [33maria-label[39m=[32m"Luci, inicio"[39m
+    [33mclass[39m=[32m"brand"[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  Name "EL PLAN":
+  [36m<a[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "¿VIENES?":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VER EL PLAN":
+  [36m<a[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mhref[39m=[32m"#details"[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR ASISTENCIA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#rsvp"[39m
+  [36m/>[39m
+
+  Name "VOLVER ARRIBA":
+  [36m<a[39m
+    [33mhref[39m=[32m"#top"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"site-header"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Navegación principal":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Navegación principal"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Cumpleaños de Luci":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+    [33mclass[39m=[32m"hero"[39m
+    [33mid[39m=[32m"top"[39m
+  [36m/>[39m
+
+  Name "Cuenta regresiva para el cumpleaños":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Cuenta regresiva para el cumpleaños"[39m
+    [33mclass[39m=[32m"countdown-section"[39m
+    [33mid[39m=[32m"countdown"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Omitir animación":
+  [36m<button[39m
+    [33mclass[39m=[32m"skip-intro"[39m
+  [36m/>[39m
+
+  Name "AGREGAR A MI CALENDARIO":
+  [36m<button[39m
+    [33mclass[39m=[32m"button button-outline calendar-button"[39m
+  [36m/>[39m
+
+  Name "CÓMO LLEGAR":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"map-pending"[39m
+    [33mclass[39m=[32m"button button-outline"[39m
+    [33mdisabled[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note"[39m
+    [33mid[39m=[32m"map-pending"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "LUCI":
+  [36m<h1[39m
+    [33mclass[39m=[32m"hero-name"[39m
+  [36m/>[39m
+
+  Name "¡YA CASI ES EL DÍA!":
+  [36m<h2 />[39m
+
+  Name "APARTA LA FECHA.":
+  [36m<h2 />[39m
+
+  Name "Jardín D-GALICIA":
+  [36m<h2 />[39m
+
+  Name "¡NO OLVIDES LLEVAR TU TRAJE DE BAÑO!":
+  [36m<h2 />[39m
+
+  Name "BUENA COMPAÑÍA. MEJORES RECUERDOS.":
+  [36m<h2 />[39m
+
+  Name "¿VIENES A CELEBRAR CON LUCI?":
+  [36m<h2 />[39m
+
+  Name "¡NOS VEMOS EN LA FIESTA!":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  strong:
+
+  Name "":
+  [36m<strong[39m
+    [33mclass[39m=[32m"date-month"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  img:
+
+  Name "Ilustración original de una alberca con un flotador y ondas de agua":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Ilustración original de una alberca con un flotador y ondas de agua"[39m
+    [33mclass[39m=[32m"pool-graphic"[39m
+    [33mrole[39m=[32m"img"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  Name "Mensaje para Luci (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  contentinfo:
+
+  Name "":
+  [36m<footer[39m
+    [33mclass[39m=[32m"closing"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"invitation"[39m
+      [33mdata-motion[39m=[32m"reduced"[39m
+      [33mdata-particles[39m=[32m"false"[39m
+      [33mstyle[39m=[32m"--background: #F8F6F0; --surface: #FFFFFF; --text: #244D55; --ivory: #F8F6F0; --water: #D6E9E7; --sage: #A9C2B5; --deep-teal: #244D55; --champagne: #D9C6A5; --dusty-coral: #C98E81; --focus-ring: #244D55;"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"skip-link"[39m
+        [33mhref[39m=[32m"#details"[39m
+      [36m>[39m
+        [0mIr a los detalles[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"site-header"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-label[39m=[32m"Luci, inicio"[39m
+          [33mclass[39m=[32m"brand"[39m
+          [33mhref[39m=[32m"#top"[39m
+        [36m>[39m
+          [0mLUCI[0m
+          [36m<span>[39m
+            [0mPOOL PARTY[0m
+          [36m</span>[39m
+        [36m</a>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Navegación principal"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#details"[39m
+          [36m>[39m
+            [0mEL PLAN[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"#rsvp"[39m
+          [36m>[39m
+            [0m¿VIENES?[0m
+            [36m<svg[39m
+              [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"15"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"15"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 7h10v10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M7 17 17 7"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</a>[39m
+        [36m</nav>[39m
+      [36m</header>[39m
+      [36m<main>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Cumpleaños de Luci"[39m
+          [33mclass[39m=[32m"hero"[39m
+          [33mid[39m=[32m"top"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"hero-water"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 1200 650"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 0C960 70 1180 340 820 320S400 500 580 650h620Z"[39m
+                [33mfill[39m=[32m"var(--water)"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M1200 180C1060 130 1110 460 880 450S710 600 760 650h440Z"[39m
+                [33mfill[39m=[32m"var(--sage)"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m""[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mpreserveAspectRatio[39m=[32m"none"[39m
+              [33mviewBox[39m=[32m"0 0 800 400"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-topline"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0mES MI CUMPLEAÑOS[0m
+            [36m</span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"skip-intro"[39m
+            [36m>[39m
+              [0mOmitir animación[0m
+              [36m<svg[39m
+                [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"13"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"13"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 5v14"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m19 12-7 7-7-7"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-invite"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0m¡Ven a celebrar conmigo![0m
+            [36m</p>[39m
+            [36m<span>[39m
+              [0mNos espera una tarde muy especial.[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hero-title"[39m
+          [36m>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"hero-name"[39m
+            [36m>[39m
+              [0mLUCI[0m
+            [36m</h1>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"party-stamp"[39m
+            [36m>[39m
+              [0mPOOL[0m
+              [36m<br />[39...
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/__tests__/riviera.test.tsx:29:12
+     27|   ).toBeVisible();
+     28|   expect(
+     29|     screen.getByRole("button", { name: "CONFIRMAR ASISTENCIA" }),
+       |            ^
+     30|   ).toBeDisabled();
+     31|   expect(screen.getByRole("button", { name: "CÓMO LLEGAR" })).toBeDisa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  src/__tests__/whatsapp.test.ts > personalized WhatsApp message > includes real civil date/time/venue and preserves personal unicode content
+AssertionError: expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain '📅 Viernes 13 de noviembre'
+
+- Expected
++ Received
+
+- 📅 Viernes 13 de noviembre
++ ¡Hola! 🌊
++
++ Soy Ana & José y confirmo mi asistencia
++ al cumpleaños de Luci. 🎉
++
++ 📅 Viernes, 13 de noviembre
++ 🕔 5:00 PM
++ 📍 Jardín D-GALICIA
++
++ 👥 Asistiremos 3 personas.
++
++ 💌 Mensaje para Luci:
++ ¡Feliz cumple! 🥳
++ Nos vemos #1 + 2
++
++ ¡Nos vemos en la fiesta! 🏖️
+
+ ❯ src/__tests__/whatsapp.test.ts:9:300
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses configured names, date and venue rather than hardcoding event details
+AssertionError: expected '¡Hola! 🌊\n\nSoy Ana & José y confirm…' to contain 'Sábado 20 de marzo'
+
+- Expected
++ Received
+
+- Sábado 20 de marzo
++ ¡Hola! 🌊
++
++ Soy Ana & José y confirmo mi asistencia
++ al cumpleaños de Luna. 🎉
++
++ 📅 Sábado, 20 de marzo
++ 🕔 8:00 PM
++ 📍 Otro jardín
++
++ 👥 Asistiremos 3 personas.
++
++ 💌 Mensaje para Luna:
++ ¡Feliz cumple! 🥳
++ Nos vemos #1 + 2
++
++ ¡Nos vemos en la fiesta! 🏖️
+
+ ❯ src/__tests__/whatsapp.test.ts:12:266
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+
+ Test Files  6 failed | 4 passed (10)
+      Tests  10 failed | 48 passed (58)
+   Start at  22:22:16
+   Duration  1.22s (transform 566ms, setup 1.08s, import 1.28s, tests 783ms, environment 3.58s)
+

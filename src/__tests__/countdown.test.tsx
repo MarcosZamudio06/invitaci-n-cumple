@@ -76,3 +76,16 @@ describe("useCountdown", () => {
     },
   );
 });
+it("refreshes on window focus without waiting for the next interval", () => {
+  vi.useFakeTimers();
+  vi.setSystemTime(new Date("2026-11-13T22:00:00Z"));
+  const { result, unmount } = renderHook(() =>
+    useCountdown("2026-11-13T23:00:00Z"),
+  );
+  vi.setSystemTime(new Date("2026-11-13T22:59:15Z"));
+  act(() => window.dispatchEvent(new Event("focus")));
+  expect(result.current?.seconds).toBe(45);
+  expect(result.current?.minutes).toBe(0);
+  unmount();
+  expect(vi.getTimerCount()).toBe(0);
+});

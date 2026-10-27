@@ -7,6 +7,9 @@ const records = vi.hoisted(() => ({
   split: vi.fn(),
   timelines: vi.fn(),
   from: vi.fn(),
+  fromTo: vi.fn(),
+  pause: vi.fn(),
+  resume: vi.fn(),
 }));
 vi.mock("gsap", async () => {
   const actual = await vi.importActual<typeof import("gsap")>("gsap");
@@ -16,12 +19,16 @@ vi.mock("gsap", async () => {
       ...actual.gsap,
       registerPlugin: vi.fn(),
       from: records.from,
+      fromTo: records.fromTo,
       timeline: () => {
         records.timelines();
         const chain = {
           from: vi.fn().mockReturnThis(),
           to: vi.fn().mockReturnThis(),
-          progress: vi.fn(),
+          progress: vi.fn().mockReturnValue(0.5),
+          paused: vi.fn().mockReturnValue(false),
+          pause: records.pause,
+          resume: records.resume,
         };
         return chain;
       },
@@ -82,4 +89,24 @@ describe("GSAP ownership lifecycle", () => {
     expect(records.split).not.toHaveBeenCalled();
     expect(records.timelines).not.toHaveBeenCalled();
   });
+});
+
+it("pauses owned timelines while hidden, resumes and removes visibility listener on cleanup", () => {
+  records.pause.mockClear();
+  records.resume.mockClear();
+  let hidden = false;
+  vi.spyOn(document, "hidden", "get").mockImplementation(() => hidden);
+  const { unmount } = render(<Fixture />);
+  hidden = true;
+  document.dispatchEvent(new Event("visibilitychange"));
+  expect(records.pause).toHaveBeenCalled();
+  hidden = false;
+  document.dispatchEvent(new Event("visibilitychange"));
+  expect(records.resume).toHaveBeenCalled();
+  unmount();
+  const count = records.pause.mock.calls.length;
+  hidden = true;
+  document.dispatchEvent(new Event("visibilitychange"));
+  expect(records.pause).toHaveBeenCalledTimes(count);
+  vi.restoreAllMocks();
 });

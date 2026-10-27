@@ -44,10 +44,10 @@ export function useInvitationMotion(
             { rotation: -18, scale: 0.92, opacity: 0, duration: 0.7 },
             0.45,
           )
-          .to({}, { duration: 0.2 });
+          .to({}, { duration: 0.1 }, 2);
 
         const date = scope.current!.querySelector(".date-layout");
-        gsap.from(".date-day", {
+        const dateTween = gsap.from(".date-day", {
           y: 30,
           opacity: 0,
           duration: 0.7,
@@ -75,7 +75,21 @@ export function useInvitationMotion(
             { y: 16, opacity: 0, duration: 0.5, stagger: 0.08 },
             0.35,
           );
-        gsap.from(".rsvp-heading", {
+        const locationTween = gsap.fromTo(
+          ".location-section > h2",
+          { clipPath: "inset(0 0 100% 0)" },
+          {
+            clipPath: "inset(0 0 0% 0)",
+            duration: 0.75,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ".location-section",
+              start: "top 80%",
+              once: true,
+            },
+          },
+        );
+        const rsvpTween = gsap.from(".rsvp-heading", {
           y: 22,
           opacity: 0,
           duration: 0.65,
@@ -85,7 +99,32 @@ export function useInvitationMotion(
             once: true,
           },
         });
+        const owned = [
+          timeline,
+          reminderTimeline,
+          dateTween,
+          locationTween,
+          rsvpTween,
+        ].filter(Boolean);
+        const pausedByVisibility = new Set<gsap.core.Animation>();
+        const onVisibility = () => {
+          if (document.hidden) {
+            for (const animation of owned) {
+              if (!animation.paused() && animation.progress() < 1) {
+                animation.pause();
+                pausedByVisibility.add(animation);
+              }
+            }
+          } else {
+            for (const animation of pausedByVisibility) animation.resume();
+            pausedByVisibility.clear();
+          }
+        };
+        document.addEventListener("visibilitychange", onVisibility);
+        onVisibility();
         return () => {
+          document.removeEventListener("visibilitychange", onVisibility);
+          pausedByVisibility.clear();
           intro.current = null;
           split.revert();
         };

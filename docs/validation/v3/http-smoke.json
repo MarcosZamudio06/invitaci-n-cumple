@@ -1,0 +1,37 @@
+{
+  "base": "http://127.0.0.1:4173",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html"
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 332
+    },
+    {
+      "path": "/assets/index-sY3qYtPh.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 538048
+    },
+    {
+      "path": "/assets/index-DuKz2Xvh.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 25853
+    },
+    {
+      "path": "/social.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 54805,
+      "pngSignature": "137,80,78,71,13,10,26,10"
+    }
+  ],
+  "metadata": "V3 exact copy",
+  "externalWhatsAppRequests": 0
+}

@@ -37,3 +37,11 @@ GSAP useGSAP scoped context owns all timelines. Hero is about 2 seconds: water e
 Authored normal-text pairs: ivory 8.57:1, white 9.26:1, water 7.35:1, sage 4.88:1, champagne 5.54:1 against deep teal. Deep teal/coral is only 3.38:1, so coral remains illustrative. See docs/validation/v2/contrast.json. These are exact token calculations, not rendered-image or full WCAG certification.
 
 320/375/390/430/768/1024/1440px are design targets with explicit mobile and intermediate compositions. Dynamic/small viewport units, safe-area controls, hover capability gating and enabled zoom are implemented. Physical-device and seven-size rendered inspection must still be completed; do not infer visual approval from build/tests.
+
+## V3 refinement
+
+Preserve the coastal compositions and original graphics. Reduce default desktop section padding from 100px to 80px and the RSVP gutter from 9vw to a bounded 32–80px. Main explanatory type is 18–22px, date detail 22–32px; small technical/timezone labels remain subordinate. Mobile date intro stacks instead of using tiny supporting prose.
+
+The RSVP section is ivory, with white 12px-radius input surfaces, 65%-teal composited boundaries, sage selected radio rows, teal action and champagne pool-ring illustration. Secondary copy and privacy feedback remain visible. No capacity is visually or technically assumed.
+
+Hero timeline ends at 2.1s. Initial wave/ring motion is bounded; distinct date, clipped venue title, staggered swimsuit reminder and RSVP reveals remain. Owned animations pause on document hidden, resume only those paused by visibility, and remove listeners on cleanup. Countdown stays 220ms and animates only changed blocks; focus and visibility both refresh wall-clock state.

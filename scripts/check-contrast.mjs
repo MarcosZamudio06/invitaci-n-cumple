@@ -31,11 +31,34 @@ const results = pairs.map(([usage, foreground, background]) => ({
   ratio: Number(ratio(foreground, background).toFixed(2)),
   normalTextAA: ratio(foreground, background) >= 4.5,
 }));
+const mix = (foreground, background, alpha) =>
+  "#" +
+  [1, 3, 5]
+    .map((index) =>
+      Math.round(
+        parseInt(foreground.slice(index, index + 2), 16) * alpha +
+          parseInt(background.slice(index, index + 2), 16) * (1 - alpha),
+      )
+        .toString(16)
+        .padStart(2, "0"),
+    )
+    .join("");
+const border = mix(theme.deepTeal, theme.surface, 0.65);
+const controls = [
+  {
+    usage: "White input boundary / white control surface",
+    foreground: border,
+    background: theme.surface,
+    ratio: Number(ratio(border, theme.surface).toFixed(2)),
+    nonTextAA: ratio(border, theme.surface) >= 3,
+  },
+];
 console.log(
   JSON.stringify(
     {
       standard: "WCAG 2.2 AA normal text >= 4.5:1",
       results,
+      controls,
       notes: [
         "Dusty coral is decorative only; deep teal on dusty coral is 3.38:1 and is not used for normal text.",
         "This checks authored solid token pairs, not rendered opacity, overlays or device color reproduction.",
@@ -45,4 +68,5 @@ console.log(
     2,
   ),
 );
-if (results.some((r) => !r.normalTextAA)) process.exitCode = 1;
+if (results.some((r) => !r.normalTextAA) || controls.some((r) => !r.nonTextAA))
+  process.exitCode = 1;

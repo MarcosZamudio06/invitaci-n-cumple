@@ -93,8 +93,8 @@ img {
   object-fit: cover;
 }
 .invitation {
-  background: var(--background);
-  color: var(--text);
+  background: var(--background-primary, var(--background));
+  color: var(--text-primary, var(--text));
   overflow: clip;
 }
 .site-header {
@@ -172,7 +172,7 @@ img {
 }
 .hero-invite span {
   display: block;
-  font-size: 13px;
+  font-size: 18px;
   margin-top: 5px;
 }
 .hero-title {
@@ -247,7 +247,7 @@ img {
 }
 .hero-meta p {
   max-width: 33ch;
-  font-size: 14px;
+  font-size: 20px;
 }
 .hero-meta > span {
   grid-column: 2;
@@ -305,7 +305,7 @@ img {
   text-underline-offset: 5px;
 }
 .section-shell {
-  padding: 100px max(6vw, 24px);
+  padding: 80px max(6vw, 24px);
 }
 .countdown-section {
   --focus-ring: var(--ivory);
@@ -327,7 +327,7 @@ img {
   letter-spacing: -0.02em;
 }
 .countdown-heading p {
-  font-size: 12px;
+  font-size: 18px;
   color: var(--ivory);
 }
 .small-cross {
@@ -371,16 +371,16 @@ img {
   font-variant-numeric: tabular-nums;
 }
 .countdown-label {
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  letter-spacing: 0.08em;
   color: var(--champagne);
   margin-top: 8px;
 }
 .countdown-footnote {
   display: block;
   text-align: center;
-  font-size: 9px;
-  letter-spacing: 0.11em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   margin-top: 24px;
   color: var(--champagne);
 }
@@ -415,12 +415,12 @@ img {
 }
 .date-intro p {
   margin-top: 24px;
-  font-size: 14px;
+  font-size: 20px;
 }
 .date-layout {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 22px;
 }
 .date-day {
   font:
@@ -436,9 +436,9 @@ img {
   min-width: 0;
 }
 .date-weekday {
-  font-size: 11px;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.05em;
   margin-bottom: 13px;
 }
 .date-month {
@@ -448,7 +448,7 @@ img {
   letter-spacing: -0.025em;
 }
 .date-year {
-  font-size: 15px;
+  font-size: 22px;
   margin-top: 10px;
 }
 .date-time {
@@ -522,14 +522,14 @@ img {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  gap: 50px;
+  gap: 32px;
   margin-top: 40px;
 }
 .location-bottom > div:first-child {
   max-width: 40ch;
 }
 .location-bottom p {
-  font-size: 14px;
+  font-size: 20px;
 }
 .location-bottom > div:last-child {
   flex-shrink: 0;
@@ -565,7 +565,7 @@ img {
   display: block;
 }
 .pool-reminder p {
-  font-size: 14px;
+  font-size: 20px;
   margin-top: 28px;
 }
 .reminder-art {
@@ -637,15 +637,15 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  gap: 50px;
-  margin-bottom: 45px;
+  gap: 32px;
+  margin-bottom: 32px;
 }
 .memories-heading h2 {
   font-size: clamp(2.3rem, 4.5vw, 4.3rem);
 }
 .memories-heading p {
-  font-size: 13px;
-  min-width: 24ch;
+  font-size: 20px;
+  min-width: 0;
 }
 .pool-graphic {
   position: relative;
@@ -842,15 +842,15 @@ img {
 .rsvp-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 9vw;
-  background: var(--surface);
+  gap: clamp(32px, 6vw, 80px);
+  background: var(--ivory);
 }
 .rsvp-heading h2 {
   max-width: 11ch;
   font-size: clamp(2.6rem, 5.2vw, 5rem);
 }
 .rsvp-heading > p {
-  font-size: 19px;
+  font-size: 22px;
   margin-top: 25px;
 }
 form label,
@@ -885,7 +885,7 @@ input::placeholder,
 textarea::placeholder {
   color: var(--deep-teal);
   opacity: 1;
-  font-size: 14px;
+  font-size: 18px;
 }
 select {
   background: var(--surface);
@@ -907,7 +907,7 @@ fieldset legend {
   gap: 8px;
   min-height: 44px;
   padding: 8px 0;
-  font-size: 13px;
+  font-size: 17px;
   margin: 0;
 }
 input[type="radio"] {
@@ -1144,7 +1144,7 @@ html:has(.invitation[data-motion="reduced"]) {
     max-width: 10ch;
   }
   .hero-invite span {
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1.6;
     max-width: 20ch;
     margin-top: 12px;
@@ -1192,7 +1192,7 @@ html:has(.invitation[data-motion="reduced"]) {
     grid-template-columns: 1fr;
   }
   .hero-meta p {
-    font-size: 13px;
+    font-size: 18px;
     max-width: 30ch;
   }
   .hero-meta > .button {
@@ -1224,7 +1224,7 @@ html:has(.invitation[data-motion="reduced"]) {
     font-size: 30px;
   }
   .countdown-heading p {
-    font-size: 11px;
+    font-size: 18px;
     grid-column: 2;
   }
   .countdown {
@@ -1240,12 +1240,12 @@ html:has(.invitation[data-motion="reduced"]) {
     right: -9px;
   }
   .countdown-label {
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.08em;
     margin-top: 4px;
   }
   .countdown-footnote {
-    font-size: 7px;
+    font-size: 10px;
     letter-spacing: 0.06em;
     line-height: 1.6;
   }
@@ -1263,7 +1263,7 @@ html:has(.invitation[data-motion="reduced"]) {
     font-size: 39px;
   }
   .date-intro p {
-    font-size: 11px;
+    font-size: 18px;
     max-width: 17ch;
     margin: 0;
   }
@@ -1276,18 +1276,18 @@ html:has(.invitation[data-motion="reduced"]) {
     margin-left: -8px;
   }
   .date-weekday {
-    font-size: 10px;
+    font-size: 20px;
     letter-spacing: 0.12em;
     margin-bottom: 11px;
   }
   .date-month {
-    font-size: clamp(1.3rem, 5.2vw, 1.8rem);
+    font-size: clamp(1.375rem, 5.2vw, 1.8rem);
   }
   .date-year {
-    font-size: 13px;
+    font-size: 22px;
   }
   .date-time {
-    font-size: 26px;
+    font-size: 30px;
     margin-top: 14px;
     padding-top: 13px;
   }
@@ -1327,7 +1327,7 @@ html:has(.invitation[data-motion="reduced"]) {
     margin-top: 28px;
   }
   .location-bottom p {
-    font-size: 13px;
+    font-size: 18px;
   }
   .location-bottom > div:last-child {
     margin-top: 28px;
@@ -1353,7 +1353,7 @@ html:has(.invitation[data-motion="reduced"]) {
     z-index: 1;
   }
   .pool-reminder p {
-    font-size: 13px;
+    font-size: 18px;
     margin-top: 22px;
   }
   .reminder-art {
@@ -1388,7 +1388,7 @@ html:has(.invitation[data-motion="reduced"]) {
     font-size: clamp(2rem, 8.7vw, 3.4rem);
   }
   .memories-heading p {
-    font-size: 13px;
+    font-size: 18px;
     margin-top: 20px;
   }
   .pool-graphic {
@@ -1450,14 +1450,14 @@ html:has(.invitation[data-motion="reduced"]) {
     max-width: 12ch;
   }
   .rsvp-heading > p {
-    font-size: 18px;
+    font-size: 22px;
     margin-top: 22px;
   }
   fieldset {
     gap: 15px;
   }
   .radio-option {
-    font-size: 12px;
+    font-size: 16px;
   }
   .fine-note {
     font-size: 11px;
@@ -1541,16 +1541,16 @@ html:has(.invitation[data-motion="reduced"]) {
     font-size: 35px;
   }
   .date-intro p {
-    font-size: 10px;
+    font-size: 18px;
   }
   .countdown-heading h2 {
     font-size: 20px;
   }
   .countdown-label {
-    font-size: 7px;
+    font-size: 10px;
   }
   .countdown-footnote {
-    font-size: 6px;
+    font-size: 10px;
   }
   .pool-graphic {
     min-height: 410px;
@@ -1559,7 +1559,7 @@ html:has(.invitation[data-motion="reduced"]) {
     font-size: 34px;
   }
   .radio-option {
-    font-size: 11px;
+    font-size: 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1572,5 +1572,198 @@ html:has(.invitation[data-motion="reduced"]) {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+/* V3 RSVP: the section stays editorial; only real input controls receive surfaces. */
+.rsvp-section form {
+  min-width: 0;
+}
+.rsvp-section form label,
+.rsvp-section form legend {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.rsvp-section input:not([type="radio"]),
+.rsvp-section textarea {
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--deep-teal) 65%, transparent);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 18px;
+  margin-bottom: 26px;
+}
+.rsvp-section textarea {
+  min-height: 132px;
+}
+.rsvp-section input::placeholder,
+.rsvp-section textarea::placeholder {
+  font-size: 18px;
+}
+.rsvp-section fieldset {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.rsvp-section .radio-option {
+  position: relative;
+  display: flex;
+  min-height: 58px;
+  padding: 14px 44px 14px 16px;
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--deep-teal) 65%, transparent);
+  border-radius: 12px;
+  background: var(--surface);
+  gap: 12px;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+.rsvp-section .radio-option.is-selected {
+  background: var(--sage);
+  border-color: var(--deep-teal);
+}
+.radio-option > svg {
+  position: absolute;
+  right: 16px;
+  opacity: 0;
+}
+.radio-option.is-selected > svg {
+  opacity: 1;
+}
+.people-field {
+  display: grid;
+  grid-template-columns: 1fr 108px;
+  align-items: center;
+  gap: 10px 20px;
+  margin-bottom: 26px;
+}
+.rsvp-section .people-field label {
+  margin: 0;
+  font-size: 17px;
+}
+.rsvp-section .people-field input {
+  margin: 0;
+  padding: 14px 12px;
+}
+.people-field .fine-note {
+  grid-column: 1 / -1;
+}
+.whatsapp-notice {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+.whatsapp-notice svg {
+  margin-top: 3px;
+  color: var(--deep-teal);
+}
+.rsvp-section form .button {
+  min-height: 60px;
+  font-size: 13px;
+  justify-content: space-between;
+}
+.rsvp-section .privacy-note {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.rsvp-art {
+  position: relative;
+  width: 260px;
+  height: 205px;
+  margin-top: 30px;
+}
+.rsvp-art > svg:first-child {
+  width: 155px;
+  position: absolute;
+  top: 0;
+  left: 25px;
+  transform: rotate(-14deg);
+  color: var(--champagne);
+}
+.rsvp-art > svg:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 260px;
+  height: 110px;
+  color: var(--sage);
+}
+.rsvp-heading .rsvp-personal {
+  font-size: 20px;
+  line-height: 1.55;
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .date-intro {
+    display: block;
+  }
+  .date-intro p {
+    max-width: 34ch;
+    margin-top: 18px;
+    font-size: 18px;
+  }
+  .date-layout {
+    margin-top: 30px;
+  }
+  .hero-meta p {
+    max-width: 34ch;
+  }
+  .hero-meta {
+    gap: 22px;
+  }
+  .hero {
+    min-height: auto;
+    padding-bottom: 36px;
+  }
+  .countdown-heading {
+    grid-template-columns: 23px 1fr;
+  }
+  .countdown-heading p {
+    max-width: 25ch;
+  }
+  .countdown-footnote {
+    max-width: 35ch;
+    margin: 20px auto 0;
+  }
+  .rsvp-art {
+    width: 190px;
+    height: 140px;
+    margin-top: 16px;
+  }
+  .rsvp-art > svg:first-child {
+    width: 115px;
+  }
+  .rsvp-art > svg:last-child {
+    width: 190px;
+    height: 80px;
+  }
+  .rsvp-heading .rsvp-personal {
+    display: none;
+  }
+  .rsvp-section {
+    gap: 26px;
+  }
+  .rsvp-section form label,
+  .rsvp-section form legend {
+    font-size: 17px;
+  }
+  .rsvp-section input:not([type="radio"]),
+  .rsvp-section textarea {
+    font-size: 18px;
+  }
+  .rsvp-section form .button {
+    font-size: 12px;
+    padding-inline: 22px;
+  }
+  .rsvp-section .privacy-note {
+    font-size: 14px;
+  }
+  .people-field {
+    grid-template-columns: 1fr 94px;
+    gap: 10px 12px;
   }
 }

@@ -1,0 +1,798 @@
+
+> luci-riviera-pool-party@2.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v4.1.12 /Users/marcoszamudio/Documents/Dev/invitación-luci
+
+ ✓ src/__tests__/logic.test.ts > real event data > resolves IANA civil time independent of machine timezone 7ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects missing/invalid dates 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects nonexistent DST time 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > rejects ambiguous DST time 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > counts remaining time and stops at zero 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > exports escaped CRLF UTC calendar 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > blocks incomplete calendar and invalid end 2ms
+ ✓ src/__tests__/logic.test.ts > real event data > folds UTF8 calendar lines at 75 octets 1ms
+ ✓ src/__tests__/logic.test.ts > real event data > builds encoded Google Maps links and rejects unsafe override 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > validates RSVP including max guests 0ms
+ ✓ src/__tests__/logic.test.ts > real event data > encodes names, newlines and emoji for official WhatsApp 2ms
+ ✓ src/__tests__/logic.test.ts > real event data > does not claim attendance on a decline 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses one real centralized recipient and official endpoint 1ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > includes real civil date/time/venue and preserves personal unicode content 4ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > omits empty optional message sections 1ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > builds a warm decline without guest count or positive confirmation 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > uses configured names, date and venue rather than hardcoding event details 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > does not keep the old hidden 100-person cap 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > enforces explicit optional caps and rejects unsafe/noninteger counts 0ms
+ ✓ src/__tests__/whatsapp.test.ts > personalized WhatsApp message > rejects blanks, missing positive event data and invalid recipient/protocol 0ms
+ ✓ src/__tests__/countdown.test.tsx > Luci real event > uses the confirmed Friday at 5 PM in Mexico City 7ms
+ ✓ src/__tests__/countdown.test.tsx > Luci real event > exports a named venue without inventing an address or end time 1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > derives an accurate initial value, updates seconds and cleans timers 6ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > recomputes from actual time after tab returns 1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > stops at zero once reached 1ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > never fabricates values for invalid target  0ms
+ ✓ src/__tests__/countdown.test.tsx > useCountdown > never fabricates values for invalid target not-a-date 0ms
+ ✓ src/__tests__/countdown.test.tsx > refreshes on window focus without waiting for the next interval 1ms
+ ✓ src/__tests__/motion.test.tsx > GSAP ownership lifecycle > reverts matchMedia and split DOM on StrictMode replay and unmount 11ms
+ ✓ src/__tests__/motion.test.tsx > GSAP ownership lifecycle > does not split or create timelines when animations disabled 1ms
+ ✓ src/__tests__/motion.test.tsx > pauses owned timelines while hidden, resumes and removes visibility listener on cleanup 1ms
+ ✓ src/__tests__/gsap-smoke.test.ts > loads real GSAP plugins and restores a real SplitText DOM split 4ms
+ ✓ src/__tests__/gsap-smoke.test.ts > reverts a real scoped timeline to its original object state 1ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > enables real RSVP, shows the exact advance notice and reveals unrestricted count only for yes 71ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > opens synchronously from valid submit with no storage, blocks accidental double submit and allows retry 16ms
+ ✓ src/__tests__/polish.test.tsx > exposes definitive semantic palette aliases while keeping existing theme tokens 34ms
+ ✓ src/__tests__/riviera.test.tsx > replaces the whole invitation with confirmed coastal birthday content 74ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > validates configured companion limit, missing phone, blanks and decline 75ms
+ ✓ src/__tests__/rsvp-v3.test.tsx > retains honest disabled state for reusable missing phone config 4ms
+ × src/__tests__/rsvp-v3.test.tsx > recovers from a synchronous browser-opening error without permanently locking the form 22ms
+   → Unable to find an accessible element with the role "alert"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "¿VIENES A CELEBRAR CON LUCI?":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m"Ana"[39m
+  [36m/>[39m
+
+  Name "Mensaje para Luci (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"section-shell rsvp-section"[39m
+      [33mid[39m=[32m"rsvp"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rsvp-heading"[39m
+      [36m>[39m
+        [36m<h2>[39m
+          [0m¿VIENES A CELEBRAR CON [0m
+          [0mLUCI[0m
+          [0m?[0m
+        [36m</h2>[39m
+        [36m<p>[39m
+          [0m¡Nos encantará verte en la fiesta![0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"rsvp-art"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 240 240"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"78"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"48"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M61 69l30 25M149 146l31 26M68 180l26-31M146 91l27-31"[39m
+              [33mstroke[39m=[32m"var(--ivory)"[39m
+              [33mstroke-width[39m=[32m"35"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"101"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"54"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mpreserveAspectRatio[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 800 400"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"rsvp-personal"[39m
+        [36m>[39m
+          [0mUn mensaje tuyo y[0m
+          [36m<br />[39m
+          [0mempezamos a contar los días.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"guest-name"[39m
+        [36m>[39m
+          [0mTu nombre[0m
+        [36m</label>[39m
+        [36m<input[39m
+          [33mautocomplete[39m=[32m"name"[39m
+          [33mid[39m=[32m"guest-name"[39m
+          [33mmaxlength[39m=[32m"80"[39m
+          [33mminlength[39m=[32m"2"[39m
+          [33mname[39m=[32m"name"[39m
+          [33mplaceholder[39m=[32m"Tu nombre"[39m
+          [33mrequired[39m=[32m""[39m
+          [33mvalue[39m=[32m"Ana"[39m
+        [36m/>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0m¿Nos acompañas?[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"yes"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m¡Claro que voy![0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option is-selected"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"no"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-minus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mEsta vez no podré[0m
+          [36m</label>[39m
+        [36m</fieldset>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"message"[39m
+        [36m>[39m
+          [0mMensaje para [0m
+          [0mLuci[0m
+          [0m [0m
+          [36m<span>[39m
+            [0m(opcional)[0m
+          [36m</span>[39m
+        [36m</label>[39m
+        [36m<textarea[39m
+          [33mid[39m=[32m"message"[39m
+          [33mmaxlength[39m=[32m"500"[39m
+          [33mname[39m=[32m"message"[39m
+          [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+          [33mrows[39m=[32m"3"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"whatsapp-notice"[39m
+          [33mid[39m=[32m"whatsapp-notice"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-message-circle"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mSe abrirá WhatsApp con tu mensaje preparado. Solo falta presionar Enviar.[0m
+          [36m</span>[39m
+        [36m</p>[39m
+        [36m<button[39m
+          [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+          [33mclass[39m=[32m"button button-teal"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mCONFIRMAR POR WHATSAPP[0m
+          [36m<svg[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 7h10v10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 17 17 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"fine-note privacy-note"[39m
+        [36m>[39m
+          [0mNo guardamos tus datos. Se compartirán por WhatsApp cuando decidas enviar el mensaje.[0m
+        [36m</p>[39m
+      [36m</form>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ✓ src/__tests__/experience.test.tsx > complete invitation > shows confirmed data while gating missing contact and map 62ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > keeps the details link keyboard reachable without an intro gate 26ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > applies reduced motion preference 9ms
+ ✓ src/__tests__/metadata.test.ts > applies central metadata to multiline tags and escapes customized copy 1ms
+ ✓ src/__tests__/metadata.test.ts > uses a contrast-safe focus-ring token outside dark sections 0ms
+ ✓ src/__tests__/experience.test.tsx > complete invitation > has no automated accessibility violations in demo markup (contrast excluded without layout) 88ms
+ ✓ src/__tests__/experience.test.tsx > gallery > renders decorative alternative when photos absent 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > opens, navigates arrows and closes with Escape, returning focus 16ms
+ ✓ src/__tests__/experience.test.tsx > gallery > handles photo errors without broken image glyphs 2ms
+ ✓ src/__tests__/experience.test.tsx > gallery > navigates on horizontal touch swipe 10ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > is absent without a file 0ms
+ ✓ src/__tests__/experience.test.tsx > music explicit interaction only > plays only after click, supports pause and error retry 21ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > validates name and selection before opening WhatsApp 56ms
+ ✓ src/__tests__/experience.test.tsx > RSVP > does not call a missing recipient a success 2ms
+ ✓ src/__tests__/experience.test.tsx > disabled animations and fallback handling > keeps all content visible with animations disabled 7ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > does not claim dress code is undefined when optional colors are absent 7ms
+ ✓ src/__tests__/experience.test.tsx > configured optional branches > marks audio loading/errors as persistent mobile feedback 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/rsvp-v3.test.tsx > recovers from a synchronous browser-opening error without permanently locking the form
+TestingLibraryElementError: Unable to find an accessible element with the role "alert"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "¿VIENES A CELEBRAR CON LUCI?":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p />[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"rsvp-personal"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"whatsapp-notice"[39m
+    [33mid[39m=[32m"whatsapp-notice"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"fine-note privacy-note"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Tu nombre":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"name"[39m
+    [33mid[39m=[32m"guest-name"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mminlength[39m=[32m"2"[39m
+    [33mname[39m=[32m"name"[39m
+    [33mplaceholder[39m=[32m"Tu nombre"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mvalue[39m=[32m"Ana"[39m
+  [36m/>[39m
+
+  Name "Mensaje para Luci (opcional)":
+  [36m<textarea[39m
+    [33mid[39m=[32m"message"[39m
+    [33mmaxlength[39m=[32m"500"[39m
+    [33mname[39m=[32m"message"[39m
+    [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+    [33mrows[39m=[32m"3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  group:
+
+  Name "¿Nos acompañas?":
+  [36m<fieldset />[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "¡Claro que voy!":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"yes"[39m
+  [36m/>[39m
+
+  Name "Esta vez no podré":
+  [36m<input[39m
+    [33mname[39m=[32m"attendance"[39m
+    [33mtype[39m=[32m"radio"[39m
+    [33mvalue[39m=[32m"no"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "CONFIRMAR POR WHATSAPP":
+  [36m<button[39m
+    [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+    [33mclass[39m=[32m"button button-teal"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33mclass[39m=[32m"section-shell rsvp-section"[39m
+      [33mid[39m=[32m"rsvp"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rsvp-heading"[39m
+      [36m>[39m
+        [36m<h2>[39m
+          [0m¿VIENES A CELEBRAR CON [0m
+          [0mLUCI[0m
+          [0m?[0m
+        [36m</h2>[39m
+        [36m<p>[39m
+          [0m¡Nos encantará verte en la fiesta![0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"rsvp-art"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 240 240"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"78"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"48"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M61 69l30 25M149 146l31 26M68 180l26-31M146 91l27-31"[39m
+              [33mstroke[39m=[32m"var(--ivory)"[39m
+              [33mstroke-width[39m=[32m"35"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"101"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"120"[39m
+              [33mcy[39m=[32m"120"[39m
+              [33mr[39m=[32m"54"[39m
+              [33mstroke[39m=[32m"var(--deep-teal)"[39m
+              [33mstroke-opacity[39m=[32m".12"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m""[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mpreserveAspectRatio[39m=[32m"none"[39m
+            [33mviewBox[39m=[32m"0 0 800 400"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 65C120 -60 220 180 400 65S680 -40 850 65"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 130C120 5 220 245 400 130S680 25 850 130"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 195C120 70 220 310 400 195S680 90 850 195"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 260C120 135 220 375 400 260S680 155 850 260"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M-50 325C120 200 220 440 400 325S680 220 850 325"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"rsvp-personal"[39m
+        [36m>[39m
+          [0mUn mensaje tuyo y[0m
+          [36m<br />[39m
+          [0mempezamos a contar los días.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"guest-name"[39m
+        [36m>[39m
+          [0mTu nombre[0m
+        [36m</label>[39m
+        [36m<input[39m
+          [33mautocomplete[39m=[32m"name"[39m
+          [33mid[39m=[32m"guest-name"[39m
+          [33mmaxlength[39m=[32m"80"[39m
+          [33mminlength[39m=[32m"2"[39m
+          [33mname[39m=[32m"name"[39m
+          [33mplaceholder[39m=[32m"Tu nombre"[39m
+          [33mrequired[39m=[32m""[39m
+          [33mvalue[39m=[32m"Ana"[39m
+        [36m/>[39m
+        [36m<fieldset>[39m
+          [36m<legend>[39m
+            [0m¿Nos acompañas?[0m
+          [36m</legend>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option "[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"yes"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0m¡Claro que voy![0m
+          [36m</label>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"radio-option is-selected"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mname[39m=[32m"attendance"[39m
+              [33mtype[39m=[32m"radio"[39m
+              [33mvalue[39m=[32m"no"[39m
+            [36m/>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-minus"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"17"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"17"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mEsta vez no podré[0m
+          [36m</label>[39m
+        [36m</fieldset>[39m
+        [36m<label[39m
+          [33mfor[39m=[32m"message"[39m
+        [36m>[39m
+          [0mMensaje para [0m
+          [0mLuci[0m
+          [0m [0m
+          [36m<span>[39m
+            [0m(opcional)[0m
+          [36m</span>[39m
+        [36m</label>[39m
+        [36m<textarea[39m
+          [33mid[39m=[32m"message"[39m
+          [33mmaxlength[39m=[32m"500"[39m
+          [33mname[39m=[32m"message"[39m
+          [33mplaceholder[39m=[32m"Déjale un mensaje a Luci..."[39m
+          [33mrows[39m=[32m"3"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"whatsapp-notice"[39m
+          [33mid[39m=[32m"whatsapp-notice"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-message-circle"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mSe abrirá WhatsApp con tu mensaje preparado. Solo falta presionar Enviar.[0m
+          [36m</span>[39m
+        [36m</p>[39m
+        [36m<button[39m
+          [33maria-describedby[39m=[32m"whatsapp-notice"[39m
+          [33mclass[39m=[32m"button button-teal"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mCONFIRMAR POR WHATSAPP[0m
+          [36m<svg[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-up-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"19"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"19"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 7h10v10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M7 17 17 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"fine-note privacy-note"[39m
+        [36m>[39m
+          [0mNo guardamos tus datos. Se compartirán por WhatsApp cuando decidas enviar el mensaje.[0m
+        [36m</p>[39m
+      [36m</form>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/__tests__/rsvp-v3.test.tsx:11:502
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: blocked
+ ❯ src/__tests__/rsvp-v3.test.tsx:11:182
+
+ ❯ bound  ../invitaci%C3%B3n-luci/node_modules/@vitest/spy/dist/index.js:332:34
+ ❯ onSubmit src/sections/RSVPSection.tsx:32:14
+ ❯ executeDispatch node_modules/react-dom/cjs/react-dom-client.development.js:20804:9
+ ❯ runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ processDispatchQueue node_modules/react-dom/cjs/react-dom-client.development.js:20854:19
+ ❯ node_modules/react-dom/cjs/react-dom-client.development.js:21423:9
+ ❯ batchedUpdates$1 node_modules/react-dom/cjs/react-dom-client.development.js:3437:40
+ ❯ dispatchEventForPluginEventSystem node_modules/react-dom/cjs/react-dom-client.development.js:21008:7
+ ❯ dispatchEvent node_modules/react-dom/cjs/react-dom-client.development.js:26142:11
+
+This error originated in "src/__tests__/rsvp-v3.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "recovers from a synchronous browser-opening error without permanently locking the form". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 failed | 9 passed (10)
+      Tests  1 failed | 59 passed (60)
+     Errors  1 error
+   Start at  22:25:07
+   Duration  1.07s (transform 517ms, setup 1.12s, import 1.38s, tests 686ms, environment 3.03s)
+

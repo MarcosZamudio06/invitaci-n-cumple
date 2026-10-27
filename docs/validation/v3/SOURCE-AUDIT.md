@@ -1,0 +1,15 @@
+# V3 source audit before refinement
+
+Baseline `8d49564` was clean before work. Existing 44 tests passed (`baseline-tests.log`). No rendered browser evidence was available, so these are code/config observations, not invented visual defects.
+
+| Evidence in V2 source                                                                      | Impact relative to V3 brief                                                           | Scoped change                                                                                    |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `src/styles.css`: `.section-shell` uses 100px vertical padding; `.rsvp-section` gap is 9vw | Desktop section separation exceeds requested tighter editorial rhythm                 | Reduce shared desktop block spacing and RSVP gutter while retaining generous grouping            |
+| Hero body 14px; date/location/reminder prose 14px and mobile 11–13px                       | Below requested secondary 18–22px and detail 22–32px hierarchy                        | Increase informational type with fluid mobile-aware values, not heading scale changes            |
+| `RSVPSection` only displays a count for `maxCompanions > 0`, default0                      | Unprovided event capacity became a hidden one-person rule                             | Optional cap; always reveal numeric total for attendance yes, minimum1 safe integer              |
+| `event.ts` `whatsappUrl` internally validates against100                                   | Unrequested maximum persists even if UI cap is removed                                | One shared safe-integer validator, optional explicit cap only                                    |
+| `config.whatsapp` empty                                                                    | Real V3 recipient cannot be reached                                                   | Single centralized `whatsappConfig`, forwarded through reusable invitation config                |
+| RSVP background white with transparent underline fields                                    | Does not implement requested ivory section / white input surfaces                     | Preserve two-column composition, add restrained bordered white fields and sage selectable states |
+| Countdown hook listens to visibilitychange but not focus                                   | Returning focus without visibility transition may leave a stale value until next tick | Recompute on focus as well, with cleanup regression                                              |
+
+Positive baseline: real IANA instant and venue-only ICS, no invented Maps target, native dialog controls, explicit audio, reduced-motion context cleanup and coherent original coastal graphics. Preserve these. No claim of overflow, optical quality or actual touch behavior can be inferred from source alone.

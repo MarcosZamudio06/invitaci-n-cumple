@@ -4,7 +4,6 @@ import {
   countdown,
   makeICS,
   mapsUrl,
-  whatsappUrl,
   validateRSVP,
 } from "../utils/event";
 const event = {
@@ -16,7 +15,22 @@ const event = {
   venue: "Salón",
   address: "Calle 1, México",
 };
+import { buildWhatsAppMessage, buildWhatsAppUrl } from "../utils/whatsapp";
+import { whatsappConfig } from "../config/whatsapp";
+import { invitation } from "../config/invitation";
+import type { RSVP } from "../utils/event";
+const whatsappUrl = (phone: string, name: string, value: RSVP) =>
+  buildWhatsAppUrl(buildWhatsAppMessage({ ...event, name }, value), {
+    ...whatsappConfig,
+    recipient: phone,
+  });
 describe("real event data", () => {
+  it("uses Luci's configured exact Google Maps share link", () => {
+    expect(mapsUrl(invitation)).toBe(
+      "https://maps.app.goo.gl/EFvPumJwwkyL1Sry6",
+    );
+  });
+
   it("resolves IANA civil time independent of machine timezone", () =>
     expect(eventInstant(event)?.toISOString()).toBe(
       "2027-03-21T02:00:00.000Z",
